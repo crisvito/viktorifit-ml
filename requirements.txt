@@ -1,0 +1,7 @@
+python="3.12"
+uv="0.9.7"
+fastapi="0.121.0"
+uvicorn="0.38.0"
+pandas="2.3.3"
+scikit-learn="1.7.2"
+pydantic="2.12.3"
