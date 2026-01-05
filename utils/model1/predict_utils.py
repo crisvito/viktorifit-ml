@@ -4,8 +4,8 @@ import joblib
 from .encode_utils import encode_value
 
 # Folder data
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
-MODELS_PATH = os.path.join(os.path.dirname(__file__), "..", "models")
+DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "data1")
+MODELS_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "models", "model1")
 SCALER_PATH = os.path.join(DATA_PATH, "scaler")
 
 SCALER_FILE = os.path.join(SCALER_PATH, "scaler.pkl")

@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
+DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "data1")
 ENCODER_PATH = os.path.join(DATA_PATH, "encoder")
 
 def encode_value(col_name, val):
