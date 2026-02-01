@@ -1,0 +1,101 @@
+User_ID,Age,Gender,Height_cm,Initial_Weight_kg,Initial_BMI,BMI_Category,Body_Fat_Category,Body_Fat_Percentage,Goal,Workout_Frequency,Average_Duration_Minutes,level,Badminton,Football,Basketball,Tennis,Volleyball,Table_Tennis,Swim
+1,45,Male,181,53,16.18,Underweight,2.0,10.9,Muscle Gain,2,90,Beginner,0,1,0,0,1,1,0
+2,31,Male,182,60,18.11,Underweight,1.0,8.0,Muscle Gain,3,45,Beginner,1,0,1,0,0,1,1
+3,24,Female,150,87,38.67,Obese,5.0,45.8,Weight Loss,2,30,Beginner,1,0,0,0,0,0,1
+4,37,Male,168,59,20.9,Normal,2.0,17.6,Muscle Gain,3,30,Intermediate,0,0,1,0,0,1,0
+5,35,Male,151,47,20.61,Normal,2.0,14.1,Muscle Gain,2,60,Beginner,1,1,0,1,0,0,0
+6,39,Female,193,46,12.35,Underweight,2.0,12.2,Muscle Gain,2,60,Beginner,1,0,0,0,0,0,1
+7,27,Male,175,106,34.61,Obese,5.0,33.2,Weight Loss,2,60,Beginner,1,1,0,1,0,0,0
+8,27,Female,181,56,17.09,Underweight,3.0,20.7,Muscle Gain,4,45,Advanced,1,0,1,1,1,0,0
+9,40,Female,155,72,29.97,Overweight,5.0,37.4,Weight Loss,4,30,Intermediate,1,0,0,1,1,0,0
+10,40,Female,181,87,26.56,Overweight,5.0,35.1,Weight Loss,4,30,Intermediate,1,0,0,0,0,0,0
+11,19,Male,153,115,49.13,Obese,5.0,49.5,Weight Loss,5,45,Beginner,1,1,0,0,0,0,0
+12,38,Male,160,98,38.28,Obese,5.0,37.3,Weight Loss,3,60,Intermediate,1,0,0,0,0,1,0
+13,18,Male,166,125,45.36,Obese,5.0,46.8,Weight Loss,3,45,Intermediate,1,1,0,0,0,1,0
+14,40,Male,187,61,17.44,Underweight,2.0,11.5,Muscle Gain,5,45,Intermediate,1,0,1,0,0,0,1
+15,46,Male,173,69,23.05,Normal,3.0,20.9,Maintain,3,90,Intermediate,1,1,0,0,0,0,0
+16,18,Male,154,77,32.47,Obese,5.0,30.0,Weight Loss,5,45,Intermediate,0,1,0,0,0,0,0
+17,37,Male,183,90,26.87,Overweight,4.0,26.8,Weight Loss,2,60,Beginner,0,0,1,1,0,0,1
+18,49,Female,155,93,38.71,Obese,5.0,52.7,Weight Loss,5,60,Advanced,1,0,0,0,0,0,0
+19,28,Male,171,47,16.07,Underweight,1.0,6.4,Muscle Gain,2,45,Beginner,1,1,0,0,1,0,1
+20,38,Female,160,66,25.78,Overweight,5.0,34.7,Weight Loss,5,60,Advanced,1,0,0,0,1,1,0
+21,41,Male,197,66,17.01,Underweight,1.0,9.5,Muscle Gain,4,90,Intermediate,1,0,0,0,0,0,0
+22,43,Male,165,60,22.04,Normal,2.0,17.8,Muscle Gain,5,90,Advanced,0,0,0,0,1,1,0
+23,44,Male,182,69,20.83,Normal,2.0,14.1,Muscle Gain,2,30,Beginner,1,1,0,0,0,0,0
+24,32,Female,158,67,26.84,Overweight,5.0,30.6,Maintain,4,90,Intermediate,1,0,1,0,0,1,0
+25,31,Female,155,103,42.87,Obese,5.0,58.3,Weight Loss,5,45,Advanced,1,0,0,0,0,0,1
+26,19,Female,165,108,39.67,Obese,5.0,51.2,Weight Loss,4,45,Advanced,1,0,1,1,0,0,0
+27,23,Female,178,100,31.56,Obese,5.0,39.7,Weight Loss,4,45,Intermediate,0,1,0,0,0,0,1
+28,37,Male,152,87,37.66,Obese,5.0,38.4,Weight Loss,4,90,Intermediate,1,0,0,0,1,1,0
+29,25,Female,169,58,20.31,Normal,3.0,21.3,Muscle Gain,3,45,Intermediate,1,0,0,1,0,0,0
+30,34,Male,185,43,12.56,Underweight,1.0,3.0,Muscle Gain,4,45,Intermediate,0,0,1,0,0,0,0
+31,20,Male,168,74,26.22,Overweight,3.0,18.8,Maintain,4,60,Advanced,1,1,1,0,0,0,1
+32,41,Female,175,103,33.63,Obese,5.0,44.6,Weight Loss,5,45,Advanced,1,0,0,0,0,0,0
+33,30,Female,152,88,38.09,Obese,5.0,50.0,Weight Loss,2,30,Beginner,1,0,0,0,0,0,1
+34,25,Female,168,56,19.84,Normal,3.0,23.5,Muscle Gain,3,30,Intermediate,1,0,0,0,1,1,1
+35,42,Female,169,83,29.06,Overweight,5.0,36.8,Weight Loss,5,30,Advanced,1,0,0,0,1,0,1
+36,18,Female,181,69,21.06,Normal,4.0,25.9,Maintain,5,30,Intermediate,1,0,0,0,0,1,1
+37,36,Female,156,85,34.93,Obese,5.0,46.7,Weight Loss,3,30,Intermediate,1,0,0,0,0,1,1
+38,44,Female,190,45,12.47,Underweight,2.0,15.7,Muscle Gain,4,60,Intermediate,0,0,1,0,0,1,0
+39,23,Female,182,76,22.94,Normal,4.0,27.2,Maintain,3,30,Intermediate,1,0,1,1,1,0,1
+40,24,Male,189,63,17.64,Underweight,1.0,8.5,Muscle Gain,2,45,Beginner,1,1,1,0,0,0,0
+41,30,Female,188,85,24.05,Normal,4.0,27.7,Maintain,3,90,Beginner,0,0,0,0,0,0,0
+42,33,Female,167,92,32.99,Obese,5.0,41.3,Weight Loss,3,45,Intermediate,1,0,0,0,0,0,0
+43,20,Male,189,99,27.71,Overweight,3.0,23.9,Weight Loss,4,60,Intermediate,1,0,1,0,1,1,1
+44,18,Female,150,102,45.33,Obese,5.0,54.0,Weight Loss,2,30,Beginner,1,0,0,0,0,1,1
+45,22,Male,160,124,48.44,Obese,5.0,49.2,Weight Loss,5,30,Intermediate,1,1,0,0,0,0,0
+46,20,Male,177,71,22.66,Normal,2.0,12.6,Muscle Gain,5,30,Advanced,1,0,0,0,0,1,0
+47,45,Female,174,126,41.62,Obese,5.0,53.3,Weight Loss,4,30,Intermediate,1,0,0,1,1,0,0
+48,34,Male,199,72,18.18,Underweight,2.0,13.5,Muscle Gain,4,45,Beginner,1,1,0,0,0,1,0
+49,42,Male,172,106,35.83,Obese,5.0,38.4,Weight Loss,3,30,Intermediate,1,1,0,0,0,0,0
+50,26,Male,180,57,17.59,Underweight,1.0,9.1,Muscle Gain,5,30,Beginner,0,1,0,0,1,1,1
+51,30,Male,179,64,19.97,Normal,2.0,10.8,Muscle Gain,4,30,Beginner,1,0,0,0,0,0,1
+52,47,Female,191,93,25.49,Overweight,5.0,33.9,Muscle Gain,2,45,Advanced,1,0,0,0,0,0,1
+53,31,Male,184,97,28.65,Overweight,4.0,25.3,Weight Loss,5,45,Advanced,1,0,1,1,1,1,1
+54,24,Female,156,106,43.56,Obese,5.0,53.4,Weight Loss,5,45,Advanced,1,0,0,0,0,1,0
+55,30,Male,165,85,31.22,Obese,4.0,28.5,Weight Loss,5,60,Intermediate,0,0,0,0,1,0,0
+56,39,Male,175,63,20.57,Normal,2.0,14.9,Muscle Gain,4,60,Intermediate,1,1,0,0,0,0,1
+57,37,Male,197,71,18.29,Underweight,2.0,12.7,Muscle Gain,4,30,Intermediate,1,1,1,0,0,1,1
+58,32,Male,198,86,21.94,Normal,2.0,17.1,Muscle Gain,3,60,Intermediate,1,1,1,0,1,1,0
+59,34,Female,151,125,54.82,Obese,5.0,60.0,Weight Loss,5,60,Advanced,1,0,0,0,0,1,1
+60,40,Female,150,62,27.56,Overweight,5.0,35.0,Maintain,5,30,Advanced,1,0,0,0,1,1,0
+61,42,Male,197,105,27.06,Overweight,4.0,25.7,Muscle Gain,2,90,Beginner,1,1,1,0,1,0,1
+62,41,Male,161,66,25.46,Overweight,3.0,22.6,Maintain,2,90,Advanced,1,1,1,0,1,1,0
+63,45,Female,154,41,17.29,Underweight,4.0,24.4,Muscle Gain,3,30,Intermediate,1,0,0,0,0,1,0
+64,31,Male,186,129,37.29,Obese,5.0,38.4,Weight Loss,5,45,Advanced,1,1,1,0,0,1,0
+65,17,Male,181,56,17.09,Underweight,1.0,5.1,Muscle Gain,5,90,Beginner,0,1,0,0,0,0,0
+66,41,Male,158,72,28.84,Overweight,4.0,24.7,Maintain,2,60,Intermediate,1,1,0,0,1,1,0
+67,23,Female,190,48,13.3,Underweight,2.0,14.0,Muscle Gain,4,30,Advanced,0,0,0,0,1,0,0
+68,25,Female,184,82,24.22,Normal,4.0,25.8,Muscle Gain,3,45,Intermediate,1,0,0,0,0,1,0
+69,40,Female,168,87,30.82,Obese,5.0,40.8,Weight Loss,5,45,Beginner,1,0,0,0,0,0,1
+70,17,Male,197,78,20.1,Normal,2.0,14.0,Muscle Gain,5,45,Advanced,1,1,0,0,1,1,1
+71,24,Male,165,81,29.75,Overweight,4.0,26.3,Weight Loss,5,60,Advanced,1,1,0,0,1,1,1
+72,40,Female,152,65,28.13,Overweight,5.0,35.8,Weight Loss,3,45,Intermediate,1,0,0,0,0,0,0
+73,27,Female,169,89,31.16,Obese,5.0,39.5,Weight Loss,3,45,Beginner,0,0,0,0,0,0,0
+74,33,Female,173,64,21.38,Normal,4.0,25.7,Muscle Gain,3,60,Intermediate,0,0,0,0,0,1,1
+75,24,Female,182,63,19.02,Normal,3.0,21.6,Muscle Gain,2,30,Beginner,1,0,0,0,0,1,0
+76,49,Male,173,52,17.37,Underweight,2.0,15.3,Muscle Gain,5,45,Intermediate,1,1,1,0,0,0,0
+77,21,Female,160,99,38.67,Obese,5.0,47.4,Weight Loss,5,60,Intermediate,0,0,0,0,0,0,0
+78,44,Male,198,46,11.73,Underweight,1.0,6.8,Muscle Gain,5,90,Advanced,1,1,0,0,0,1,1
+79,23,Female,157,96,38.95,Obese,5.0,51.3,Weight Loss,5,60,Advanced,0,1,0,0,0,1,1
+80,25,Male,185,75,21.91,Normal,2.0,13.3,Muscle Gain,4,60,Intermediate,1,1,1,0,1,0,1
+81,24,Female,187,84,24.02,Normal,4.0,25.6,Muscle Gain,4,30,Intermediate,1,0,0,0,0,0,0
+82,28,Female,189,59,16.52,Underweight,2.0,16.0,Muscle Gain,5,45,Advanced,0,0,0,1,0,0,1
+83,49,Female,169,104,36.41,Obese,5.0,46.6,Weight Loss,5,60,Advanced,1,0,0,0,0,1,1
+84,39,Female,184,47,13.88,Underweight,2.0,14.1,Muscle Gain,3,45,Intermediate,1,0,0,0,0,0,0
+85,40,Male,197,55,14.17,Underweight,1.0,7.9,Muscle Gain,3,45,Intermediate,1,1,1,0,0,0,1
+86,38,Female,174,53,17.51,Underweight,3.0,18.8,Muscle Gain,2,45,Beginner,0,0,0,0,0,0,1
+87,43,Male,184,115,33.97,Obese,5.0,33.7,Weight Loss,5,30,Advanced,1,1,0,0,1,0,1
+88,17,Male,174,126,41.62,Obese,5.0,43.3,Weight Loss,4,45,Intermediate,1,1,0,0,1,0,0
+89,30,Male,178,54,17.04,Underweight,1.0,6.3,Muscle Gain,3,45,Intermediate,1,0,1,0,0,1,0
+90,19,Male,167,105,37.65,Obese,5.0,37.9,Weight Loss,4,45,Intermediate,1,1,0,0,0,1,0
+91,17,Female,195,71,18.67,Normal,3.0,18.4,Muscle Gain,4,30,Intermediate,1,0,1,0,1,0,0
+92,21,Male,167,126,45.18,Obese,5.0,44.5,Weight Loss,3,90,Advanced,0,0,0,0,1,0,0
+93,42,Male,151,102,44.73,Obese,5.0,50.7,Weight Loss,2,60,Beginner,1,1,0,0,0,1,1
+94,30,Male,184,125,36.92,Obese,5.0,37.6,Weight Loss,4,60,Intermediate,1,1,1,0,1,0,0
+95,43,Female,165,90,33.06,Obese,5.0,46.1,Weight Loss,4,60,Advanced,1,0,0,1,0,0,0
+96,25,Female,190,64,17.73,Underweight,3.0,21.1,Muscle Gain,4,45,Intermediate,1,0,0,0,0,1,1
+97,31,Female,185,97,28.34,Overweight,5.0,37.2,Weight Loss,4,30,Beginner,0,1,0,0,0,0,0
+98,31,Female,182,102,30.79,Obese,5.0,37.5,Weight Loss,5,60,Advanced,1,0,0,0,0,0,1
+99,42,Male,153,101,43.15,Obese,5.0,45.4,Weight Loss,4,60,Intermediate,1,0,0,0,1,0,1
+100,29,Male,182,61,18.42,Underweight,2.0,12.4,Muscle Gain,4,60,Intermediate,1,1,0,0,0,1,0
