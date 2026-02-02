@@ -1,8 +1,7 @@
 # file: app.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-from utils.predict_utils import predict_user_input
-from utils.encode_utils import decode_value
+from utils.common import predict_user_input, decode_value
 
 app = FastAPI(title="ML Prediction API")
 
