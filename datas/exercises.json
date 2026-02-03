@@ -3,10 +3,19 @@
     "exerciseId": "2ORFMoR",
     "name": "hack calf raise",
     "gifUrl": "2ORFMoR.gif",
-    "targetMuscles": ["calves"],
-    "bodyParts": ["lower legs"],
-    "equipments": ["sled machine"],
-    "secondaryMuscles": ["hamstrings", "glutes"],
+    "targetMuscles": [
+      "calves"
+    ],
+    "bodyParts": [
+      "lower legs"
+    ],
+    "equipments": [
+      "sled machine"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
     "instructions": [
       "Step:1 Adjust the sled machine to a comfortable weight.",
       "Step:2 Stand on the sled machine with your toes on the platform and your heels hanging off.",
@@ -20,10 +29,20 @@
     "exerciseId": "2Qh2J1e",
     "name": "sled 45° leg press (side pov)",
     "gifUrl": "2Qh2J1e.gif",
-    "targetMuscles": ["glutes"],
-    "bodyParts": ["upper legs"],
-    "equipments": ["sled machine"],
-    "secondaryMuscles": ["quadriceps", "hamstrings", "calves"],
+    "targetMuscles": [
+      "glutes"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "sled machine"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hamstrings",
+      "calves"
+    ],
     "instructions": [
       "Step:1 Adjust the seat of the sled machine so that your knees are at a 90-degree angle when your feet are on the footplate.",
       "Step:2 Sit on the sled machine with your back flat against the backrest and your feet shoulder-width apart on the footplate.",
@@ -37,10 +56,19 @@
     "exerciseId": "3eGE2JC",
     "name": "dumbbell front raise",
     "gifUrl": "3eGE2JC.gif",
-    "targetMuscles": ["delts"],
-    "bodyParts": ["shoulders"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["biceps", "trapezius"],
+    "targetMuscles": [
+      "delts"
+    ],
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "trapezius"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart, holding a dumbbell in each hand with your palms facing your thighs.",
       "Step:2 Keeping your arms straight, exhale and lift the dumbbells in front of you until they are at shoulder level.",
@@ -52,10 +80,19 @@
     "exerciseId": "3tAXPQ6",
     "name": "dumbbell over bench revers wrist curl",
     "gifUrl": "3tAXPQ6.gif",
-    "targetMuscles": ["forearms"],
-    "bodyParts": ["lower arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["biceps", "brachialis"],
+    "targetMuscles": [
+      "forearms"
+    ],
+    "bodyParts": [
+      "lower arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "brachialis"
+    ],
     "instructions": [
       "Step:1 Sit on a bench with your feet flat on the ground and hold a dumbbell in each hand, palms facing down.",
       "Step:2 Rest your forearms on the bench, allowing your wrists to hang off the edge.",
@@ -68,10 +105,19 @@
     "exerciseId": "3TZduzM",
     "name": "barbell incline bench press",
     "gifUrl": "3TZduzM.gif",
-    "targetMuscles": ["pectorals"],
-    "bodyParts": ["chest"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["shoulders", "triceps"],
+    "targetMuscles": [
+      "pectorals"
+    ],
+    "bodyParts": [
+      "chest"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "triceps"
+    ],
     "instructions": [
       "Step:1 Set up an incline bench at a 45-degree angle.",
       "Step:2 Lie down on the bench with your feet flat on the ground.",
@@ -85,10 +131,18 @@
     "exerciseId": "3XFdb1Z",
     "name": "cable squatting curl",
     "gifUrl": "3XFdb1Z.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["cable"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "cable"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Attach a cable handle to the lowest setting on a cable machine.",
       "Step:2 Stand facing the machine with your feet shoulder-width apart.",
@@ -104,10 +158,18 @@
     "exerciseId": "4dF3maG",
     "name": "dumbbell one arm hammer preacher curl",
     "gifUrl": "4dF3maG.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Sit on a preacher bench with a dumbbell in one hand and your upper arm resting on the pad.",
       "Step:2 Hold the dumbbell with a neutral grip (palms facing your body).",
@@ -121,10 +183,18 @@
     "exerciseId": "4dUn2iv",
     "name": "barbell standing close grip curl",
     "gifUrl": "4dUn2iv.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Stand up straight with your feet shoulder-width apart and hold a barbell with an underhand grip, hands close together.",
       "Step:2 Keep your elbows close to your torso and your upper arms stationary throughout the movement.",
@@ -138,10 +208,20 @@
     "exerciseId": "5bpPTHv",
     "name": "kettlebell pistol squat",
     "gifUrl": "5bpPTHv.gif",
-    "targetMuscles": ["glutes"],
-    "bodyParts": ["upper legs"],
-    "equipments": ["kettlebell"],
-    "secondaryMuscles": ["quadriceps", "hamstrings", "calves"],
+    "targetMuscles": [
+      "glutes"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "kettlebell"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hamstrings",
+      "calves"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart, holding a kettlebell in front of your chest with both hands.",
       "Step:2 Lift your left foot off the ground and extend it forward, keeping it parallel to the ground.",
@@ -154,10 +234,19 @@
     "exerciseId": "05Cf2v8",
     "name": "impossible dips",
     "gifUrl": "05Cf2v8.gif",
-    "targetMuscles": ["triceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["body weight"],
-    "secondaryMuscles": ["chest", "shoulders"],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "chest",
+      "shoulders"
+    ],
     "instructions": [
       "Step:1 Position yourself between two parallel bars with your arms fully extended and your body suspended in the air.",
       "Step:2 Bend your knees and cross your ankles.",
@@ -170,10 +259,18 @@
     "exerciseId": "5uFK1xr",
     "name": "barbell seated overhead triceps extension",
     "gifUrl": "5uFK1xr.gif",
-    "targetMuscles": ["triceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["shoulders"],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "shoulders"
+    ],
     "instructions": [
       "Step:1 Sit on a bench with your back straight and feet flat on the ground.",
       "Step:2 Hold a barbell with an overhand grip, hands shoulder-width apart, and raise it overhead.",
@@ -186,10 +283,19 @@
     "exerciseId": "5v7KYld",
     "name": "smith incline bench press",
     "gifUrl": "5v7KYld.gif",
-    "targetMuscles": ["pectorals"],
-    "bodyParts": ["chest"],
-    "equipments": ["smith machine"],
-    "secondaryMuscles": ["shoulders", "triceps"],
+    "targetMuscles": [
+      "pectorals"
+    ],
+    "bodyParts": [
+      "chest"
+    ],
+    "equipments": [
+      "smith machine"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "triceps"
+    ],
     "instructions": [
       "Step:1 Adjust the bench to a 30-45 degree incline.",
       "Step:2 Sit on the bench with your back flat against the pad and feet firmly on the ground.",
@@ -203,10 +309,19 @@
     "exerciseId": "6bOA1Oi",
     "name": "weighted side bend (on stability ball)",
     "gifUrl": "6bOA1Oi.gif",
-    "targetMuscles": ["abs"],
-    "bodyParts": ["waist"],
-    "equipments": ["weighted"],
-    "secondaryMuscles": ["obliques", "lower back"],
+    "targetMuscles": [
+      "abs"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "weighted"
+    ],
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
     "instructions": [
       "Step:1 Sit on a stability ball with your feet shoulder-width apart and flat on the ground.",
       "Step:2 Hold a weight in one hand and place your other hand on your hip.",
@@ -219,10 +334,19 @@
     "exerciseId": "6cKQC5E",
     "name": "dumbbell one arm upright row",
     "gifUrl": "6cKQC5E.gif",
-    "targetMuscles": ["delts"],
-    "bodyParts": ["shoulders"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["traps", "biceps"],
+    "targetMuscles": [
+      "delts"
+    ],
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "traps",
+      "biceps"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart, holding a dumbbell in one hand with an overhand grip.",
       "Step:2 Let the dumbbell hang at arm's length in front of your thighs, with your palm facing your body.",
@@ -235,10 +359,19 @@
     "exerciseId": "6HiHHe0",
     "name": "barbell standing rocking leg calf raise",
     "gifUrl": "6HiHHe0.gif",
-    "targetMuscles": ["calves"],
-    "bodyParts": ["lower legs"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["hamstrings", "quadriceps"],
+    "targetMuscles": [
+      "calves"
+    ],
+    "bodyParts": [
+      "lower legs"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "quadriceps"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart and hold a barbell across your upper back.",
       "Step:2 Raise your heels off the ground as high as possible, balancing on the balls of your feet.",
@@ -250,10 +383,19 @@
     "exerciseId": "6kSxYnw",
     "name": "barbell wrist curl v. 2",
     "gifUrl": "6kSxYnw.gif",
-    "targetMuscles": ["forearms"],
-    "bodyParts": ["lower arms"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["biceps", "brachialis"],
+    "targetMuscles": [
+      "forearms"
+    ],
+    "bodyParts": [
+      "lower arms"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "brachialis"
+    ],
     "instructions": [
       "Step:1 Sit on a bench with your feet flat on the ground and your knees bent.",
       "Step:2 Hold a barbell with an underhand grip, palms facing up, and your hands shoulder-width apart.",
@@ -267,10 +409,18 @@
     "exerciseId": "6MfS53i",
     "name": "dumbbell lying single extension",
     "gifUrl": "6MfS53i.gif",
-    "targetMuscles": ["triceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["shoulders"],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "shoulders"
+    ],
     "instructions": [
       "Step:1 Lie flat on a bench with a dumbbell in one hand and your arm fully extended above your chest.",
       "Step:2 Lower the dumbbell in a controlled manner towards your forehead, keeping your upper arm stationary.",
@@ -282,10 +432,18 @@
     "exerciseId": "6sMAmNv",
     "name": "dumbbell reverse spider curl",
     "gifUrl": "6sMAmNv.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Stand up straight with a dumbbell in each hand, palms facing your body and arms fully extended.",
       "Step:2 Keeping your upper arms stationary, exhale and curl the weights while contracting your biceps.",
@@ -299,10 +457,19 @@
     "exerciseId": "6sYyrRX",
     "name": "bent knee lying twist (male)",
     "gifUrl": "6sYyrRX.gif",
-    "targetMuscles": ["glutes"],
-    "bodyParts": ["upper legs"],
-    "equipments": ["body weight"],
-    "secondaryMuscles": ["obliques", "hip flexors"],
+    "targetMuscles": [
+      "glutes"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "obliques",
+      "hip flexors"
+    ],
     "instructions": [
       "Step:1 Lie flat on your back with your knees bent and feet flat on the ground.",
       "Step:2 Extend your arms out to the sides, perpendicular to your body.",
@@ -316,10 +483,20 @@
     "exerciseId": "7F1DVzn",
     "name": "lever front pulldown",
     "gifUrl": "7F1DVzn.gif",
-    "targetMuscles": ["lats"],
-    "bodyParts": ["back"],
-    "equipments": ["leverage machine"],
-    "secondaryMuscles": ["biceps", "rhomboids", "rear deltoids"],
+    "targetMuscles": [
+      "lats"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "leverage machine"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rhomboids",
+      "rear deltoids"
+    ],
     "instructions": [
       "Step:1 Adjust the seat height and position yourself on the machine with your knees under the pads and your feet flat on the ground.",
       "Step:2 Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
@@ -333,10 +510,19 @@
     "exerciseId": "7I6LNUG",
     "name": "lever seated row",
     "gifUrl": "7I6LNUG.gif",
-    "targetMuscles": ["upper back"],
-    "bodyParts": ["back"],
-    "equipments": ["leverage machine"],
-    "secondaryMuscles": ["biceps", "forearms"],
+    "targetMuscles": [
+      "upper back"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "leverage machine"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Adjust the seat height and footrests to a comfortable position.",
       "Step:2 Sit on the machine with your chest against the pad and your feet on the footrests.",
@@ -352,10 +538,18 @@
     "exerciseId": "7inpWch",
     "name": "dumbbell standing concentration curl",
     "gifUrl": "7inpWch.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart and hold a dumbbell in one hand, with your arm fully extended and palm facing inwards.",
       "Step:2 Place your opposite hand on your thigh for support.",
@@ -370,10 +564,19 @@
     "exerciseId": "7saC5zz",
     "name": "cable decline fly",
     "gifUrl": "7saC5zz.gif",
-    "targetMuscles": ["pectorals"],
-    "bodyParts": ["chest"],
-    "equipments": ["cable"],
-    "secondaryMuscles": ["shoulders", "triceps"],
+    "targetMuscles": [
+      "pectorals"
+    ],
+    "bodyParts": [
+      "chest"
+    ],
+    "equipments": [
+      "cable"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "triceps"
+    ],
     "instructions": [
       "Step:1 Adjust the cable machine to a decline position.",
       "Step:2 Stand facing away from the machine with your feet shoulder-width apart.",
@@ -387,10 +590,20 @@
     "exerciseId": "7zdxRTl",
     "name": "smith leg press",
     "gifUrl": "7zdxRTl.gif",
-    "targetMuscles": ["glutes"],
-    "bodyParts": ["upper legs"],
-    "equipments": ["smith machine"],
-    "secondaryMuscles": ["quadriceps", "hamstrings", "calves"],
+    "targetMuscles": [
+      "glutes"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "smith machine"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "hamstrings",
+      "calves"
+    ],
     "instructions": [
       "Step:1 Adjust the seat and footplate of the smith machine to a comfortable position.",
       "Step:2 Sit on the machine with your back against the backrest and your feet shoulder-width apart on the footplate.",
@@ -405,10 +618,19 @@
     "exerciseId": "8eqjhOl",
     "name": "dumbbell palms in incline bench press",
     "gifUrl": "8eqjhOl.gif",
-    "targetMuscles": ["triceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["dumbbell"],
-    "secondaryMuscles": ["chest", "shoulders"],
+    "targetMuscles": [
+      "triceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "chest",
+      "shoulders"
+    ],
     "instructions": [
       "Step:1 Set up an incline bench at a 45-degree angle.",
       "Step:2 Sit on the bench with your back against the backrest and feet flat on the ground.",
@@ -423,10 +645,19 @@
     "exerciseId": "8K0w2yA",
     "name": "assisted hanging knee raise with throw down",
     "gifUrl": "8K0w2yA.gif",
-    "targetMuscles": ["abs"],
-    "bodyParts": ["waist"],
-    "equipments": ["assisted"],
-    "secondaryMuscles": ["hip flexors", "lower back"],
+    "targetMuscles": [
+      "abs"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "assisted"
+    ],
+    "secondaryMuscles": [
+      "hip flexors",
+      "lower back"
+    ],
     "instructions": [
       "Step:1 Hang from a pull-up bar with your arms fully extended and your palms facing away from you.",
       "Step:2 Engage your core and lift your knees towards your chest, keeping your legs together.",
@@ -438,10 +669,18 @@
     "exerciseId": "8oYqOt9",
     "name": "cable seated curl",
     "gifUrl": "8oYqOt9.gif",
-    "targetMuscles": ["biceps"],
-    "bodyParts": ["upper arms"],
-    "equipments": ["cable"],
-    "secondaryMuscles": ["forearms"],
+    "targetMuscles": [
+      "biceps"
+    ],
+    "bodyParts": [
+      "upper arms"
+    ],
+    "equipments": [
+      "cable"
+    ],
+    "secondaryMuscles": [
+      "forearms"
+    ],
     "instructions": [
       "Step:1 Sit on a cable machine with your feet flat on the ground and your back straight.",
       "Step:2 Grasp the cable attachment with an underhand grip, palms facing up, and your arms fully extended.",
@@ -455,10 +694,19 @@
     "exerciseId": "8ozhUIZ",
     "name": "barbell standing calf raise",
     "gifUrl": "8ozhUIZ.gif",
-    "targetMuscles": ["calves"],
-    "bodyParts": ["lower legs"],
-    "equipments": ["barbell"],
-    "secondaryMuscles": ["hamstrings", "glutes"],
+    "targetMuscles": [
+      "calves"
+    ],
+    "bodyParts": [
+      "lower legs"
+    ],
+    "equipments": [
+      "barbell"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
     "instructions": [
       "Step:1 Stand with your feet shoulder-width apart and place a barbell across your upper back.",
       "Step:2 Raise your heels off the ground as high as possible, using only your toes.",
@@ -470,10 +718,19 @@
     "exerciseId": "8urJS9b",
     "name": "weighted hyperextension (on stability ball)",
     "gifUrl": "8urJS9b.gif",
-    "targetMuscles": ["spine"],
-    "bodyParts": ["back"],
-    "equipments": ["weighted"],
-    "secondaryMuscles": ["glutes", "hamstrings"],
+    "targetMuscles": [
+      "spine"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "weighted"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
     "instructions": [
       "Step:1 Position yourself face down on a stability ball with your hips resting on the ball and your feet against a wall for stability.",
       "Step:2 Place your hands behind your head or cross them over your chest.",
@@ -486,10 +743,18 @@
     "exerciseId": "8xUv4J7",
     "name": "cable seated crunch",
     "gifUrl": "8xUv4J7.gif",
-    "targetMuscles": ["abs"],
-    "bodyParts": ["waist"],
-    "equipments": ["cable"],
-    "secondaryMuscles": ["obliques"],
+    "targetMuscles": [
+      "abs"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "cable"
+    ],
+    "secondaryMuscles": [
+      "obliques"
+    ],
     "instructions": [
       "Step:1 Sit on a cable machine with your feet flat on the ground and your knees bent.",
       "Step:2 Hold the cable handle with both hands and position it behind your head.",
@@ -497,5 +762,796 @@
       "Step:4 Pause for a moment at the top, then slowly return to the starting position.",
       "Step:5 Repeat for the desired number of repetitions."
     ]
+  },
+  {
+    "exerciseId": "cardio_01",
+    "name": "Badminton",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "racket"
+    ],
+    "instructions": [
+      "Step:1 Grab a racket and find a partner.",
+      "Step:2 Play a match focusing on quick movements and swings."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_02",
+    "name": "Football",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "football"
+    ],
+    "instructions": [
+      "Step:1 Go to a field.",
+      "Step:2 Run and dribble the ball for sustained aerobic activity."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_03",
+    "name": "Basketball",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "basketball"
+    ],
+    "instructions": [
+      "Step:1 Practice shooting and dribbling.",
+      "Step:2 Play a full-court game for high intensity."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_04",
+    "name": "Tennis",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "arms",
+      "legs"
+    ],
+    "equipments": [
+      "tennis racket"
+    ],
+    "instructions": [
+      "Step:1 Practice serves and returns.",
+      "Step:2 Run across the court to hit the ball back."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_05",
+    "name": "Volleyball",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "volleyball"
+    ],
+    "instructions": [
+      "Step:1 Practice serving and spiking.",
+      "Step:2 Keep the ball in the air with teammates."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_06",
+    "name": "Table Tennis",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "arms"
+    ],
+    "equipments": [
+      "paddle"
+    ],
+    "instructions": [
+      "Step:1 Stand at the table.",
+      "Step:2 React quickly to hit the ball back with high speed."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_07",
+    "name": "Swimming",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "none"
+    ],
+    "instructions": [
+      "Step:1 Jump into the pool.",
+      "Step:2 Swim laps using your preferred stroke (freestyle, breaststroke)."
+    ],
+    "Environment": "Other"
+  },
+  {
+    "exerciseId": "cardio_08",
+    "name": "Jumping Jacks",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Stand with feet together.",
+      "Step:2 Jump while spreading legs and clapping hands above head."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_09",
+    "name": "High Knees",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Run in place.",
+      "Step:2 Lift your knees as high as possible towards your chest."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_10",
+    "name": "Burpees",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Squat down.",
+      "Step:2 Kick feet back to plank, return to squat, and jump up."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_11",
+    "name": "Mountain Climbers",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "abs",
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Start in plank position.",
+      "Step:2 Alternately bring knees toward chest quickly."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_12",
+    "name": "Butt Kicks",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Run in place.",
+      "Step:2 Kick your heels up to touch your glutes."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_13",
+    "name": "Shadow Boxing",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "arms"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Stand in boxing stance.",
+      "Step:2 Throw punches into the air with speed."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_14",
+    "name": "Lateral Shuffles",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Stay low in a half squat.",
+      "Step:2 Shuffle quickly side to side."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_15",
+    "name": "Squat Jumps",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Perform a regular squat.",
+      "Step:2 Jump up explosively from the bottom."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_16",
+    "name": "Plank Jacks",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "abs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Start in plank.",
+      "Step:2 Jump feet out and in like a jumping jack."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_17",
+    "name": "Skaters",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Jump sideways to the right.",
+      "Step:2 Land on right foot and swing left leg behind."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_18",
+    "name": "Bear Crawls",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Get on all fours.",
+      "Step:2 Crawl forward and backward keeping hips low."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_19",
+    "name": "Jump Rope",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "jump rope"
+    ],
+    "instructions": [
+      "Step:1 Hold rope handles.",
+      "Step:2 Swing and jump over the rope repeatedly."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_20",
+    "name": "Running in Place",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "instructions": [
+      "Step:1 Stand upright.",
+      "Step:2 Mimic running motion without moving forward."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "cardio_21",
+    "name": "Treadmill Running",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "treadmill"
+    ],
+    "instructions": [
+      "Step:1 Step on treadmill.",
+      "Step:2 Run at a steady pace for the duration."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_22",
+    "name": "Stationary Cycling",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "stationary bike"
+    ],
+    "instructions": [
+      "Step:1 Sit on bike.",
+      "Step:2 Pedal at moderate to high resistance."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_23",
+    "name": "Elliptical Trainer",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "elliptical machine"
+    ],
+    "instructions": [
+      "Step:1 Step on pedals.",
+      "Step:2 Move legs and arms in synchronized motion."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_24",
+    "name": "Rowing Machine",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "back",
+      "legs"
+    ],
+    "equipments": [
+      "rower"
+    ],
+    "instructions": [
+      "Step:1 Sit and strap in.",
+      "Step:2 Pull handle back using legs and then arms."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_25",
+    "name": "Stair Climber",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs",
+      "glutes"
+    ],
+    "equipments": [
+      "stair machine"
+    ],
+    "instructions": [
+      "Step:1 Step onto machine.",
+      "Step:2 Climb the rotating stairs continuously."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_26",
+    "name": "Battle Ropes",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "arms",
+      "shoulders"
+    ],
+    "equipments": [
+      "battle ropes"
+    ],
+    "instructions": [
+      "Step:1 Grip both ropes.",
+      "Step:2 Create waves by moving arms up and down."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_27",
+    "name": "Assault Bike",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "air bike"
+    ],
+    "instructions": [
+      "Step:1 Sit and pedal.",
+      "Step:2 Push and pull handles as hard as possible."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_28",
+    "name": "SkiErg",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "arms",
+      "abs"
+    ],
+    "equipments": [
+      "ski machine"
+    ],
+    "instructions": [
+      "Step:1 Pull handles down.",
+      "Step:2 Mimic cross-country skiing motion."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_29",
+    "name": "Box Jumps",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "plyo box"
+    ],
+    "instructions": [
+      "Step:1 Stand before the box.",
+      "Step:2 Jump onto the box with both feet."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "cardio_30",
+    "name": "Kettlebell Swings",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "glutes",
+      "back"
+    ],
+    "equipments": [
+      "kettlebell"
+    ],
+    "instructions": [
+      "Step:1 Swing bell between legs.",
+      "Step:2 Snap hips forward to swing bell to chest height."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "home_01",
+    "name": "bodyweight squat",
+    "targetMuscles": [
+      "quads",
+      "legs"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "calves"
+    ],
+    "instructions": [
+      "Step:1 Stand with feet shoulder-width apart.",
+      "Step:2 Lower your hips as if sitting in a chair.",
+      "Step:3 Keep chest up and return to standing."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_02",
+    "name": "glute bridge",
+    "targetMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "bodyParts": [
+      "waist",
+      "upper legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "abs"
+    ],
+    "instructions": [
+      "Step:1 Lie on your back with knees bent.",
+      "Step:2 Lift your hips off the floor until knees, hips, and shoulders form a line.",
+      "Step:3 Squeeze glutes and lower down."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_03",
+    "name": "reverse lunge",
+    "targetMuscles": [
+      "quads",
+      "glutes"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "calves"
+    ],
+    "instructions": [
+      "Step:1 Stand tall.",
+      "Step:2 Step one foot back and lower your hips until both knees are bent at 90 degrees.",
+      "Step:3 Push through the front heel to return."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_04",
+    "name": "single leg deadlift",
+    "targetMuscles": [
+      "hamstrings",
+      "balance"
+    ],
+    "bodyParts": [
+      "upper legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "lower back"
+    ],
+    "instructions": [
+      "Step:1 Stand on one leg.",
+      "Step:2 Hinge at your hips, extending your free leg behind you for balance.",
+      "Step:3 Return to standing using your hamstring."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_05",
+    "name": "standing calf raise",
+    "targetMuscles": [
+      "calves"
+    ],
+    "bodyParts": [
+      "lower legs"
+    ],
+    "equipments": [
+      "body weight",
+      "stairs"
+    ],
+    "secondaryMuscles": [
+      "none"
+    ],
+    "instructions": [
+      "Step:1 Stand on the edge of a step.",
+      "Step:2 Lower your heels down, then raise them up as high as possible."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_06",
+    "name": "superman",
+    "targetMuscles": [
+      "back",
+      "lower back"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "shoulders"
+    ],
+    "instructions": [
+      "Step:1 Lie face down on the floor.",
+      "Step:2 Lift your arms and legs off the ground simultaneously.",
+      "Step:3 Hold and lower."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_07",
+    "name": "pike push up",
+    "targetMuscles": [
+      "shoulders"
+    ],
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "upper chest"
+    ],
+    "instructions": [
+      "Step:1 Start in a plank position, then lift your hips high to form an inverted V.",
+      "Step:2 Bend elbows to lower your head towards the floor.",
+      "Step:3 Push back up."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_08",
+    "name": "tricep dip on chair",
+    "targetMuscles": [
+      "triceps"
+    ],
+    "bodyParts": [
+      "arms"
+    ],
+    "equipments": [
+      "chair"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "chest"
+    ],
+    "instructions": [
+      "Step:1 Sit on the edge of a sturdy chair, hands next to hips.",
+      "Step:2 Slide off and lower your body by bending elbows.",
+      "Step:3 Push back up."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_09",
+    "name": "doorframe row",
+    "targetMuscles": [
+      "back",
+      "biceps"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "doorframe"
+    ],
+    "secondaryMuscles": [
+      "rear delts"
+    ],
+    "instructions": [
+      "Step:1 Stand in a doorframe, holding the sides.",
+      "Step:2 Lean back until arms are straight.",
+      "Step:3 Pull your chest towards the doorframe using your back muscles."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "home_10",
+    "name": "bicycle crunch",
+    "targetMuscles": [
+      "abs",
+      "obliques"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "hip flexors"
+    ],
+    "instructions": [
+      "Step:1 Lie on back, hands behind head.",
+      "Step:2 Bring opposite elbow to opposite knee while extending the other leg.",
+      "Step:3 Alternate sides."
+    ],
+    "gifUrl": "",
+    "Environment": "Home"
   }
 ]
