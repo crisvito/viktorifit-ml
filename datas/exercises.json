@@ -740,6 +740,33 @@
     ]
   },
   {
+    "exerciseId": "new_run_01",
+    "name": "Outdoor Running",
+    "gifUrl": "None",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "calves",
+      "glutes",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Step:1 Start with a 5-minute warm-up walk.",
+      "Step:2 Begin running at a comfortable, steady pace.",
+      "Step:3 Keep your posture upright and gaze forward.",
+      "Step:4 Land mid-foot and keep your stride consistent.",
+      "Step:5 Cool down with a slower jog or walk."
+    ],
+    "Environment": "Home"
+  },
+  {
     "exerciseId": "8xUv4J7",
     "name": "cable seated crunch",
     "gifUrl": "8xUv4J7.gif",
@@ -1553,5 +1580,566 @@
     ],
     "gifUrl": "",
     "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_01",
+    "name": "diamond push up",
+    "targetMuscles": [
+      "triceps",
+      "chest"
+    ],
+    "bodyParts": [
+      "arms"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "shoulders"
+    ],
+    "instructions": [
+      "Step:1 Hands close together forming a diamond.",
+      "Step:2 Lower chest to hands.",
+      "Step:3 Push back up."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_02",
+    "name": "decline push up",
+    "targetMuscles": [
+      "shoulders",
+      "chest"
+    ],
+    "bodyParts": [
+      "chest"
+    ],
+    "equipments": [
+      "body weight",
+      "chair"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Step:1 Feet on a chair, hands on floor.",
+      "Step:2 Perform a push up."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_03",
+    "name": "bulgarian split squat",
+    "targetMuscles": [
+      "quads",
+      "glutes"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight",
+      "chair"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "instructions": [
+      "Step:1 One foot on chair behind you.",
+      "Step:2 Squat down with front leg.",
+      "Step:3 Drive back up."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_04",
+    "name": "single leg glute bridge",
+    "targetMuscles": [
+      "glutes"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "instructions": [
+      "Step:1 Lie on back, one knee bent, other leg straight.",
+      "Step:2 Lift hips using one leg."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_05",
+    "name": "side plank",
+    "targetMuscles": [
+      "abs",
+      "obliques"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "shoulders"
+    ],
+    "instructions": [
+      "Step:1 Prop yourself on one elbow.",
+      "Step:2 Lift hips to form straight line.",
+      "Step:3 Hold."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_06",
+    "name": "dead bug",
+    "targetMuscles": [
+      "abs",
+      "core"
+    ],
+    "bodyParts": [
+      "waist"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "none"
+    ],
+    "instructions": [
+      "Step:1 Lie on back, arms and legs in air.",
+      "Step:2 Lower opposite arm and leg.",
+      "Step:3 Return and switch."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_07",
+    "name": "wall sit",
+    "targetMuscles": [
+      "quads"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight",
+      "wall"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "instructions": [
+      "Step:1 Lean against wall.",
+      "Step:2 Slide down until knees at 90 degrees.",
+      "Step:3 Hold."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_08",
+    "name": "inchworm",
+    "targetMuscles": [
+      "hamstrings",
+      "shoulders"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "abs"
+    ],
+    "instructions": [
+      "Step:1 Stand tall.",
+      "Step:2 Walk hands out to plank.",
+      "Step:3 Walk hands back to feet."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_09",
+    "name": "commando plank",
+    "targetMuscles": [
+      "abs",
+      "shoulders"
+    ],
+    "bodyParts": [
+      "core"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Step:1 Start in plank.",
+      "Step:2 Go down to elbows one by one.",
+      "Step:3 Push back up to hands."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_10",
+    "name": "calf jump",
+    "targetMuscles": [
+      "calves",
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "none"
+    ],
+    "instructions": [
+      "Step:1 Stand straight.",
+      "Step:2 Jump using only ankles/calves.",
+      "Step:3 Land softly."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_11",
+    "name": "tuck jump",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "abs"
+    ],
+    "instructions": [
+      "Step:1 Jump high.",
+      "Step:2 Bring knees to chest in air."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_12",
+    "name": "box jump",
+    "targetMuscles": [
+      "cardio",
+      "legs"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "plyo box"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "instructions": [
+      "Step:1 Stand in front of box.",
+      "Step:2 Jump onto it landing soft.",
+      "Step:3 Step down."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_13",
+    "name": "speed skater",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "instructions": [
+      "Step:1 Jump side to side like a skater.",
+      "Step:2 Swing arms for momentum."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_14",
+    "name": "kettlebell swing",
+    "targetMuscles": [
+      "cardio",
+      "hamstrings"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "kettlebell"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "instructions": [
+      "Step:1 Hinge at hips holding KB.",
+      "Step:2 Snap hips forward to swing KB up."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_15",
+    "name": "medicine ball slam",
+    "targetMuscles": [
+      "cardio",
+      "abs"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "medicine ball"
+    ],
+    "secondaryMuscles": [
+      "shoulders"
+    ],
+    "instructions": [
+      "Step:1 Lift ball overhead.",
+      "Step:2 Slam it down hard.",
+      "Step:3 Catch and repeat."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_16",
+    "name": "star jump",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "none"
+    ],
+    "instructions": [
+      "Step:1 Squat down.",
+      "Step:2 Jump up spreading arms and legs like a star."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_17",
+    "name": "fast feet",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "calves"
+    ],
+    "instructions": [
+      "Step:1 Run in place with very small, fast steps."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_18",
+    "name": "flutter kicks",
+    "targetMuscles": [
+      "abs",
+      "cardio"
+    ],
+    "bodyParts": [
+      "core"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "hip flexors"
+    ],
+    "instructions": [
+      "Step:1 Lie on back.",
+      "Step:2 Kick legs up and down without touching floor."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_19",
+    "name": "step up jump",
+    "targetMuscles": [
+      "cardio",
+      "legs"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "chair",
+      "box"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "instructions": [
+      "Step:1 Step on box.",
+      "Step:2 Drive other knee up and jump.",
+      "Step:3 Switch legs."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_20",
+    "name": "plank to squat",
+    "targetMuscles": [
+      "cardio"
+    ],
+    "bodyParts": [
+      "full body"
+    ],
+    "equipments": [
+      "body weight"
+    ],
+    "secondaryMuscles": [
+      "legs"
+    ],
+    "instructions": [
+      "Step:1 Start in plank.",
+      "Step:2 Jump feet forward to squat.",
+      "Step:3 Jump back to plank."
+    ],
+    "Environment": "Home"
+  },
+  {
+    "exerciseId": "new_21",
+    "name": "face pull",
+    "targetMuscles": [
+      "shoulders",
+      "back"
+    ],
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipments": [
+      "cable"
+    ],
+    "secondaryMuscles": [
+      "rotator cuff"
+    ],
+    "instructions": [
+      "Step:1 Set cable high.",
+      "Step:2 Pull rope to face separating hands.",
+      "Step:3 Squeeze rear delts."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_22",
+    "name": "lat pullover",
+    "targetMuscles": [
+      "lats",
+      "back"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "cable",
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Step:1 Lie on bench or stand.",
+      "Step:2 Pull weight from overhead down to hips with straight arms."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_23",
+    "name": "arnold press",
+    "targetMuscles": [
+      "shoulders"
+    ],
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipments": [
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Step:1 Hold DBs palms facing you.",
+      "Step:2 Press up while rotating palms out."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_24",
+    "name": "romanian deadlift",
+    "targetMuscles": [
+      "hamstrings"
+    ],
+    "bodyParts": [
+      "legs"
+    ],
+    "equipments": [
+      "barbell",
+      "dumbbell"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "lower back"
+    ],
+    "instructions": [
+      "Step:1 Hinge at hips keeping legs slightly bent.",
+      "Step:2 Lower weight to shins.",
+      "Step:3 Pull back up."
+    ],
+    "Environment": "Gym"
+  },
+  {
+    "exerciseId": "new_25",
+    "name": "t-bar row",
+    "targetMuscles": [
+      "back"
+    ],
+    "bodyParts": [
+      "back"
+    ],
+    "equipments": [
+      "barbell",
+      "machine"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "instructions": [
+      "Step:1 Straddle the bar.",
+      "Step:2 Bend over and pull bar to chest."
+    ],
+    "Environment": "Gym"
   }
 ]
