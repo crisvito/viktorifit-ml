@@ -650,7 +650,7 @@ User_ID,Age,Gender,Height_cm,Initial_Weight_kg,Initial_BMI,BMI_Category,Body_Fat
 649,41,Male,154,87,36.68,Obese,5.0,41.0,Weight Loss,4,30,Intermediate,0,0,0,1,0
 650,20,Male,190,84,23.27,Normal,2.0,17.8,Maintain,4,60,Advanced,1,1,0,0,0
 651,26,Male,175,94,30.69,Obese,5.0,30.2,Weight Loss,3,30,Advanced,0,1,1,0,0
-652,19,Male,177,94,30.0,,4.0,26.6,Weight Loss,3,45,Beginner,0,0,1,0,0
+652,19,Male,177,94,30.0,Obese,4.0,26.6,Weight Loss,3,45,Beginner,0,0,1,0,0
 653,34,Male,151,57,25.0,Overweight,3.0,19.6,Maintain,4,45,Intermediate,1,0,0,0,1
 654,38,Female,199,102,25.76,Overweight,5.0,30.5,Muscle Gain,2,90,Beginner,1,0,0,0,0
 655,24,Female,155,86,35.8,Obese,5.0,46.3,Weight Loss,4,45,Intermediate,0,0,0,1,0
