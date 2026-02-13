@@ -9,7 +9,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(current_dir)), 'models', 'model_meal.pickle')
 
-print("⏳ Loading Meal Model...")
+print("Loading Meal Model...")
 try:
     with open(MODEL_PATH, 'rb') as f:
         meal_data = pickle.load(f)
@@ -19,10 +19,10 @@ try:
     db_meal = meal_data['meal_db']
     features_meal = meal_data['features'] # Kolom yg diharapkan: ['Energy', 'Protein', 'Carbs', 'Fat']
     
-    print("✅ Model Meal Berhasil Diload!")
+    print("Model Meal Berhasil Diload!")
     
 except Exception as e:
-    print(f"❌ Error Load Model Meal: {e}")
+    print(f"Error Load Model Meal: {e}")
     knn_meal = None
 
 # ==========================================
