@@ -16,3 +16,4 @@ WORKDIR /app
 COPY --from=build /usr/local /usr/local
 COPY . .
 CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8000"]
+# uvicorn app.app:app --host 0.0.0.0 --port 8000
