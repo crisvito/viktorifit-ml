@@ -1,0 +1,14 @@
+max-line-length = 100
+extend-ignore =
+    W291,
+    W292,
+    W293,
+    W503,
+    E203,
+    E221,
+    E272,
+    E302,
+exclude =
+    __pycache__,
+    .venv,
+    notebooks/

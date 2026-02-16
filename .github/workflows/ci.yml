@@ -7,149 +7,143 @@
 name: CI — Lint · Test · Validate
 
 on:
-  push:
-    branches: ["**"]
-  pull_request:
-    branches: [main, develop]
+    push:
+        branches: ["**"]
+    pull_request:
+        branches: [main, develop]
 
 jobs:
-  # ─────────────────────────────────────────────────────────
-  # JOB 1: Lint (flake8 + black check)
-  # ─────────────────────────────────────────────────────────
-  lint:
-    name: 🔍 Lint
-    runs-on: ubuntu-latest
+    # ─────────────────────────────────────────────────────────
+    # JOB 1: Lint (flake8 + black check)
+    # ─────────────────────────────────────────────────────────
+    lint:
+        name: 🔍 Lint
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.10"
 
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-lint-${{ hashFiles('requirements-dev.txt') }}
-          restore-keys: ${{ runner.os }}-pip-lint-
+            - name: Cache pip
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/pip
+                  key: ${{ runner.os }}-pip-lint-${{ hashFiles('requirements-dev.txt') }}
+                  restore-keys: ${{ runner.os }}-pip-lint-
 
-      - name: Install lint tools
-        run: |
-          pip install --upgrade pip
-          pip install flake8 black
+            - name: Install lint tools
+              run: |
+                  pip install --upgrade pip
+                  pip install flake8 black
 
-      - name: Run flake8 (style + syntax errors)
-        run: |
-          flake8 app/ tests/ \
-            --max-line-length=100 \
-            --extend-ignore=E203,W503 \
-            --exclude=__pycache__,.venv
+            - name: Run flake8 (style + syntax errors)
+              run: |
+                  flake8 app/ tests/ \
+                    --max-line-length=100 \
+                    --extend-ignore=E203,W503 \
+                    --exclude=__pycache__,.venv
 
-      - name: Run black (formatting check)
-        run: |
-          black --check --diff app/ tests/ --line-length 100
+    # ─────────────────────────────────────────────────────────
+    # JOB 2: Unit Tests
+    # ─────────────────────────────────────────────────────────
+    test:
+        name: 🧪 Unit Tests
+        runs-on: ubuntu-latest
+        needs: lint
 
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-  # ─────────────────────────────────────────────────────────
-  # JOB 2: Unit Tests
-  # ─────────────────────────────────────────────────────────
-  test:
-    name: 🧪 Unit Tests
-    runs-on: ubuntu-latest
-    needs: lint
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.10"
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+            - name: Cache pip
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/pip
+                  key: ${{ runner.os }}-pip-test-${{ hashFiles('requirements.txt') }}
+                  restore-keys: ${{ runner.os }}-pip-test-
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
+            - name: Install dependencies
+              run: |
+                  pip install --upgrade pip
+                  pip install -r requirements.txt
+                  pip install pytest pytest-cov httpx
 
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-test-${{ hashFiles('requirements.txt') }}
-          restore-keys: ${{ runner.os }}-pip-test-
+            - name: Run pytest with coverage
+              run: |
+                  pytest tests/ \
+                    --cov=app \
+                    --cov-report=xml \
+                    --cov-report=term-missing \
+                    --tb=short \
+                    -v
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest pytest-cov httpx
+            - name: Upload coverage report
+              uses: actions/upload-artifact@v4
+              with:
+                  name: coverage-report
+                  path: coverage.xml
+                  retention-days: 7
 
-      - name: Run pytest with coverage
-        run: |
-          pytest tests/ \
-            --cov=app \
-            --cov-report=xml \
-            --cov-report=term-missing \
-            --tb=short \
-            -v
+    # ─────────────────────────────────────────────────────────
+    # JOB 3: Validate Model Files Exist
+    # ─────────────────────────────────────────────────────────
+    validate-structure:
+        name: 📦 Validate Model Structure
+        runs-on: ubuntu-latest
+        needs: lint
 
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage.xml
-          retention-days: 7
+        steps:
+            - name: Checkout code (with Git LFS)
+              uses: actions/checkout@v4
+              with:
+                  lfs: true # Required: model files stored in Git LFS
 
+            - name: Check required pickle models exist
+              run: |
+                  echo "Checking model_meal.pickle..."
+                  test -f models/model_meal.pickle && echo "✅ model_meal.pickle OK" || { echo "❌ MISSING"; exit 1; }
 
-  # ─────────────────────────────────────────────────────────
-  # JOB 3: Validate Model Files Exist
-  # ─────────────────────────────────────────────────────────
-  validate-structure:
-    name: 📦 Validate Model Structure
-    runs-on: ubuntu-latest
-    needs: lint
+                  echo "Checking model_workout.pickle..."
+                  test -f models/model_workout.pickle && echo "✅ model_workout.pickle OK" || { echo "❌ MISSING"; exit 1; }
 
-    steps:
-      - name: Checkout code (with Git LFS)
-        uses: actions/checkout@v4
-        with:
-          lfs: true                # Required: model files stored in Git LFS
+            - name: Check required ONNX models exist
+              run: |
+                  REQUIRED_ONNX=(
+                    "Body_Fat_Percentage_y.onnx"
+                    "Daily_Calories.onnx"
+                    "Daily_Water_ml.onnx"
+                    "Limit_Sugar_g.onnx"
+                    "Target_Carbs_g.onnx"
+                    "Target_Fat_g.onnx"
+                    "Target_Fiber_g.onnx"
+                    "Target_Protein_g.onnx"
+                    "Weight_kg.onnx"
+                  )
+                  for f in "${REQUIRED_ONNX[@]}"; do
+                    if test -f "models/onnx/$f"; then
+                      echo "✅ $f OK"
+                    else
+                      echo "❌ MISSING: models/onnx/$f"
+                      exit 1
+                    fi
+                  done
+                  echo "All 14 ONNX models present."
 
-      - name: Check required pickle models exist
-        run: |
-          echo "Checking model_meal.pickle..."
-          test -f models/model_meal.pickle && echo "✅ model_meal.pickle OK" || { echo "❌ MISSING"; exit 1; }
-
-          echo "Checking model_workout.pickle..."
-          test -f models/model_workout.pickle && echo "✅ model_workout.pickle OK" || { echo "❌ MISSING"; exit 1; }
-
-      - name: Check required ONNX models exist
-        run: |
-          REQUIRED_ONNX=(
-            "Body_Fat_Percentage_y.onnx"
-            "Daily_Calories.onnx"
-            "Daily_Water_ml.onnx"
-            "Limit_Sugar_g.onnx"
-            "Target_Carbs_g.onnx"
-            "Target_Fat_g.onnx"
-            "Target_Fiber_g.onnx"
-            "Target_Protein_g.onnx"
-            "Weight_kg.onnx"
-          )
-          for f in "${REQUIRED_ONNX[@]}"; do
-            if test -f "models/onnx/$f"; then
-              echo "✅ $f OK"
-            else
-              echo "❌ MISSING: models/onnx/$f"
-              exit 1
-            fi
-          done
-          echo "All 14 ONNX models present."
-
-      - name: Verify model_progress.pickle is NOT used
-        run: |
-          echo "Checking that model_progress.pickle is not referenced in API code..."
-          if grep -r "model_progress" app/ tests/; then
-            echo "❌ DEPRECATED model_progress.pickle is still referenced in code!"
-            exit 1
-          fi
-          echo "✅ model_progress.pickle correctly excluded from API."
+            - name: Verify model_progress.pickle is NOT used
+              run: |
+                  echo "Checking that model_progress.pickle is not referenced in API code..."
+                  if grep -r "model_progress" app/ tests/; then
+                    echo "❌ DEPRECATED model_progress.pickle is still referenced in code!"
+                    exit 1
+                  fi
+                  echo "✅ model_progress.pickle correctly excluded from API."
