@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "name": "viktorifit-ml",
+  "builds": [
+    {
+      "src": "app/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "app/app.py"
+    },
+    {
+      "src": "/docs",
+      "dest": "app/app.py"
+    },
+    {
+      "src": "/openapi.json",
+      "dest": "app/app.py"
+    }
+  ],
+  "regions": ["sin1"],
+  "env": {
+    "PYTHONPATH": "."
+  },
+  "functions": {
+    "app/app.py": {
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  }
+}

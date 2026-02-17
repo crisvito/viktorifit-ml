@@ -1,7 +1,5 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import pandas as pd
-import pickle
 import sys
 import os
 
@@ -176,7 +174,7 @@ def predict_workout_endpoint(user_data: WorkoutRequest):
     """
     # 1. Data Transformation (Model -> Dict)
     # Convert Pydantic model to a standard dictionary for internal processing.
-    input_dict = user_data.dict() 
+    input_dict = user_data.model_dump() 
     
     # 2. Service Invocation (The "Brain")
     # Pass the data to the external utility function that contains the ML/Logic.
@@ -209,7 +207,7 @@ def predict_meal_endpoint(meal_data: MealRequest):
         HTTPException (400): If the meal allocation logic fails.
     """
     # 1. Data Transformation
-    input_dict = meal_data.dict()
+    input_dict = meal_data.model_dump()
     
     # 2. Service Invocation
     # Calls the algorithm that knapsacks/optimizes food choices based on macros.
@@ -241,7 +239,7 @@ def predict_progress_endpoint(data: ProgressRequest):
     Raises:
         HTTPException (400): If the forecasting simulation fails.
     """
-    input_dict = data.dict()
+    input_dict = data.model_dump()
     
     # Panggil fungsi looping baru kita
     # (Triggers the weekly simulation logic)
