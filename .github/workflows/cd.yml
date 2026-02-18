@@ -78,40 +78,40 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-      - name: Get deployment URL
-        id: railway-url
-        run: |
-          set -e
-          echo "Connecting to Project: $RAILWAY_PROJECT_ID"
-          echo "Targeting Service: $RAILWAY_SERVICE_ID"
+      # - name: Get deployment URL
+      #   id: railway-url
+      #   run: |
+      #     set -e
+      #     echo "Connecting to Project: $RAILWAY_PROJECT_ID"
+      #     echo "Targeting Service: $RAILWAY_SERVICE_ID"
 
-          # Kita coba ambil domain langsung menggunakan Service ID. 
-          # Perhatikan penggunaan flag --project dan --environment secara eksplisit.
-          URL=$(railway domain --service $RAILWAY_SERVICE_ID --project $RAILWAY_PROJECT_ID --environment production --json | jq -r '.[0].domain // empty')
+      #     # Kita coba ambil domain langsung menggunakan Service ID. 
+      #     # Perhatikan penggunaan flag --project dan --environment secara eksplisit.
+      #     URL=$(railway domain --service $RAILWAY_SERVICE_ID --project $RAILWAY_PROJECT_ID --environment production --json | jq -r '.[0].domain // empty')
 
-          # Jika masih kosong, coba ambil dari status dengan filter yang lebih aman
-          if [ -z "$URL" ]; then
-            echo "Domain not found via 'railway domain', trying fallback status check..."
-            URL=$(railway status --project $RAILWAY_PROJECT_ID --environment production --json | jq -r --arg SID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $SID) | .domains[0] // empty')
-          fi
+      #     # Jika masih kosong, coba ambil dari status dengan filter yang lebih aman
+      #     if [ -z "$URL" ]; then
+      #       echo "Domain not found via 'railway domain', trying fallback status check..."
+      #       URL=$(railway status --project $RAILWAY_PROJECT_ID --environment production --json | jq -r --arg SID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $SID) | .domains[0] // empty')
+      #     fi
 
-          if [ -z "$URL" ]; then
-            echo "❌ ERROR: URL tidak ditemukan. Pastikan kamu sudah menekan 'Generate Domain' di tab Networking Railway."
-            exit 1
-          fi
+      #     if [ -z "$URL" ]; then
+      #       echo "❌ ERROR: URL tidak ditemukan. Pastikan kamu sudah menekan 'Generate Domain' di tab Networking Railway."
+      #       exit 1
+      #     fi
 
-          echo "url=https://$URL" >> $GITHUB_OUTPUT
-          echo "🚀 Deployed to: https://$URL"
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
-          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+      #     echo "url=https://$URL" >> $GITHUB_OUTPUT
+      #     echo "🚀 Deployed to: https://$URL"
+      #   env:
+      #     RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      #     RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+      #     RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
 
       - name: 🩺 Smoke Test — Health Check
         run: |
           echo "Waiting for deployment to warm up..."
-          URL="${{ steps.railway-url.outputs.url }}"
+          URL="https://viktorifit-ml-production-1a27.up.railway.app"
           
           # Coba ping URL setiap 10 detik, maksimal 3 menit (18 kali)
           for i in {1..18}; do
