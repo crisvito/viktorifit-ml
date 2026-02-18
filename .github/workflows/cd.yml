@@ -82,12 +82,22 @@ jobs:
         id: railway-url
         run: |
           set -e
-          # Kita tidak perlu flag --project di sini karena ID sudah ada di environment variable.
-          # CLI akan otomatis mendeteksi project & service dari env.
-          URL=$(railway domain --json | jq -r '.[0].domain // empty')
+
+          # Kita panggil domain secara spesifik untuk Service ID tersebut.
+          # Jika 'railway domain' gagal, kita pakai fallback ke 'railway status'.
+          echo "Fetching domain for service: $RAILWAY_SERVICE_ID"
+          
+          URL=$(railway domain --service $RAILWAY_SERVICE_ID --json | jq -r '.[0].domain // empty')
 
           if [ -z "$URL" ]; then
-            echo "ERROR: Could not locate a domain."
+            echo "Domain not found in 'railway domain', trying fallback..."
+            # Fallback: Mengambil domain pertama dari status project
+            URL=$(railway status --json | jq -r --arg ID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $ID) | .domains[0] // empty')
+          fi
+
+          if [ -z "$URL" ]; then
+            echo "❌ ERROR: Could not locate a domain for service ID: $RAILWAY_SERVICE_ID"
+            railway status || true
             exit 1
           fi
 
