@@ -49,7 +49,7 @@ jobs:
       - name: Get deployment URL
         id: railway-url
         run: |
-          URL=$(railway status --service viktorifit-ml --json | jq -r '.services[0].domains[0]')
+          URL=$(railway domain --json | jq -r '.[0].domain')
           echo "url=https://$URL" >> $GITHUB_OUTPUT
           echo "🚀 Deployed to: https://$URL"
         env:
