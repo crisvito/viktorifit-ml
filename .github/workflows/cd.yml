@@ -12,7 +12,7 @@ name: CD — Deploy to Railway
 
 on:
   push:
-    branches: ["master"]  # Deploy on push to master branch
+    branches: ["main", "master"]  # Deploy on push to main and master branch
 
 jobs:
 
@@ -39,6 +39,22 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
+      - name: Debug Railway environment (safe checks)
+        run: |
+          echo "RAILWAY_TOKEN set? $( [ -z "$RAILWAY_TOKEN" ] && echo "no" || echo "yes" )"
+          echo "RAILWAY_PROJECT_ID set? $( [ -z "$RAILWAY_PROJECT_ID" ] && echo "no" || echo "yes" )"
+          echo "RAILWAY_SERVICE_ID set? $( [ -z "$RAILWAY_SERVICE_ID" ] && echo "no" || echo "yes" )"
+          echo "railway whoami (non-sensitive):"
+          railway whoami || true
+          echo "railway status (non-sensitive):"
+          # try JSON first if supported, otherwise fall back to human output
+          railway status --json 2>/dev/null || railway status || true
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+
+
       - name: Deploy to Railway
         run: railway up --service viktorifit-ml
         env:
@@ -49,7 +65,32 @@ jobs:
       - name: Get deployment URL
         id: railway-url
         run: |
-          URL=$(railway domain --json | jq -r '.[0].domain')
+          set -e
+
+          # Defensive check: ensure required envs exist (do not print secret values)
+          if [ -z "$RAILWAY_PROJECT_ID" ] || [ -z "$RAILWAY_SERVICE_ID" ]; then
+            echo "ERROR: RAILWAY_PROJECT_ID or RAILWAY_SERVICE_ID is not set in environment. Check repository secrets."
+            exit 1
+          fi
+
+          # Try the recommended command first
+          URL=$(railway domain --json 2>/dev/null | jq -r '.[0].domain // empty' || true)
+
+          # Fallback: try status JSON structure
+          if [ -z "$URL" ]; then
+            URL=$(railway status --json 2>/dev/null | jq -r '.services[0].domains[0] // empty' || true)
+          fi
+
+          # If still empty, dump some non-sensitive cli info and fail
+          if [ -z "$URL" ]; then
+            echo "ERROR: Could not locate a domain for the configured project/service."
+            echo "railway status (human-readable) for debugging:"
+            railway status || true
+            echo "railway domain (raw output):"
+            railway domain || true
+            exit 1
+          fi
+
           echo "url=https://$URL" >> $GITHUB_OUTPUT
           echo "🚀 Deployed to: https://$URL"
         env:
@@ -57,10 +98,11 @@ jobs:
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
+
       - name: 🩺 Smoke Test — Health Check
         run: |
           echo "Waiting for deployment to warm up..."
-          URL="${{ steps.railway-url.outputs.url }}/"
+          URL="${{ steps.railway-url.outputs.url }}"
           
           # Coba ping URL setiap 10 detik, maksimal 3 menit (18 kali)
           for i in {1..18}; do
