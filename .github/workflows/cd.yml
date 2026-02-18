@@ -54,13 +54,28 @@ jobs:
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
+      - name: 🚀 Deploy to Railway Production
+        run: |
+          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$RAILWAY_PROJECT_ID" ] || [ -z "$RAILWAY_SERVICE_ID" ]; then
+            echo "❌ Missing required Railway secrets."
+            exit 1
+          fi
 
-      - name: Deploy to Railway
-        run: railway up --service viktorifit-ml
+          railway up \
+            --service $RAILWAY_SERVICE_ID \
+            --project $RAILWAY_PROJECT_ID \
+            --detach
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+
+      - name: ⏳ Wait for Deployment to Finish
+        run: |
+          echo "Waiting for Railway deployment to stabilize..."
+          sleep 40
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
       - name: Get deployment URL
         id: railway-url
@@ -133,3 +148,4 @@ jobs:
               sha:   context.sha,
             });
             console.log(`✅ Release tagged: ${tag}`);
+          
