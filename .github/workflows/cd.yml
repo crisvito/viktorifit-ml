@@ -82,22 +82,21 @@ jobs:
         id: railway-url
         run: |
           set -e
+          echo "Connecting to Project: $RAILWAY_PROJECT_ID"
+          echo "Targeting Service: $RAILWAY_SERVICE_ID"
 
-          # Kita panggil domain secara spesifik untuk Service ID tersebut.
-          # Jika 'railway domain' gagal, kita pakai fallback ke 'railway status'.
-          echo "Fetching domain for service: $RAILWAY_SERVICE_ID"
-          
-          URL=$(railway domain --service $RAILWAY_SERVICE_ID --json | jq -r '.[0].domain // empty')
+          # Kita coba ambil domain langsung menggunakan Service ID. 
+          # Perhatikan penggunaan flag --project dan --environment secara eksplisit.
+          URL=$(railway domain --service $RAILWAY_SERVICE_ID --project $RAILWAY_PROJECT_ID --environment production --json | jq -r '.[0].domain // empty')
 
+          # Jika masih kosong, coba ambil dari status dengan filter yang lebih aman
           if [ -z "$URL" ]; then
-            echo "Domain not found in 'railway domain', trying fallback..."
-            # Fallback: Mengambil domain pertama dari status project
-            URL=$(railway status --json | jq -r --arg ID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $ID) | .domains[0] // empty')
+            echo "Domain not found via 'railway domain', trying fallback status check..."
+            URL=$(railway status --project $RAILWAY_PROJECT_ID --environment production --json | jq -r --arg SID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $SID) | .domains[0] // empty')
           fi
 
           if [ -z "$URL" ]; then
-            echo "❌ ERROR: Could not locate a domain for service ID: $RAILWAY_SERVICE_ID"
-            railway status || true
+            echo "❌ ERROR: URL tidak ditemukan. Pastikan kamu sudah menekan 'Generate Domain' di tab Networking Railway."
             exit 1
           fi
 
