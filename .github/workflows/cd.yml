@@ -61,11 +61,11 @@ jobs:
             exit 1
           fi
 
-          railway up \
+          railway domain \
             --service $RAILWAY_SERVICE_ID \
             --project $RAILWAY_PROJECT_ID \
             --environment production \
-            --detach
+            --json
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
