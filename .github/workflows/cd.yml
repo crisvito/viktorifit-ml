@@ -12,7 +12,7 @@ name: CD — Deploy to Railway
 
 on:
   push:
-    branches: ["**"]  # Deploy on push to any branch (adjust if you want to restrict to main/develop)
+    branches: ["master"]  # Deploy on push to master branch
 
 jobs:
 
@@ -40,7 +40,7 @@ jobs:
         run: npm install -g @railway/cli
 
       - name: Deploy to Railway
-        run: railway up --service viktorifit-ml
+        run: railway up --detach
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
@@ -53,7 +53,9 @@ jobs:
           echo "url=https://$URL" >> $GITHUB_OUTPUT
           echo "🚀 Deployed to: https://$URL"
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          AILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
       - name: 🩺 Smoke Test — Health Check
         run: |
