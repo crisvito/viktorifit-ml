@@ -61,11 +61,11 @@ jobs:
             exit 1
           fi
 
-          railway domain \
+          railway up \
             --service $RAILWAY_SERVICE_ID \
             --project $RAILWAY_PROJECT_ID \
             --environment production \
-            --json
+            --detach
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
@@ -82,28 +82,12 @@ jobs:
         id: railway-url
         run: |
           set -e
+          # Kita tidak perlu flag --project di sini karena ID sudah ada di environment variable.
+          # CLI akan otomatis mendeteksi project & service dari env.
+          URL=$(railway domain --json | jq -r '.[0].domain // empty')
 
-          # Defensive check: ensure required envs exist (do not print secret values)
-          if [ -z "$RAILWAY_PROJECT_ID" ] || [ -z "$RAILWAY_SERVICE_ID" ]; then
-            echo "ERROR: RAILWAY_PROJECT_ID or RAILWAY_SERVICE_ID is not set in environment. Check repository secrets."
-            exit 1
-          fi
-
-          # Try the recommended command first
-          URL=$(railway domain --json 2>/dev/null | jq -r '.[0].domain // empty' || true)
-
-          # Fallback: try status JSON structure
           if [ -z "$URL" ]; then
-            URL=$(railway status --json 2>/dev/null | jq -r '.services[0].domains[0] // empty' || true)
-          fi
-
-          # If still empty, dump some non-sensitive cli info and fail
-          if [ -z "$URL" ]; then
-            echo "ERROR: Could not locate a domain for the configured project/service."
-            echo "railway status (human-readable) for debugging:"
-            railway status || true
-            echo "railway domain (raw output):"
-            railway domain || true
+            echo "ERROR: Could not locate a domain."
             exit 1
           fi
 
