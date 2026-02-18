@@ -53,7 +53,7 @@ jobs:
           echo "url=https://$URL" >> $GITHUB_OUTPUT
           echo "🚀 Deployed to: https://$URL"
         env:
-          AILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
