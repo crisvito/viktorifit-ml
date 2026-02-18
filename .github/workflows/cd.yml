@@ -12,7 +12,7 @@ name: CD — Deploy to Railway
 
 on:
   push:
-    branches: [main]
+    branches: ["**"]  # Deploy on push to any branch (adjust if you want to restrict to main/develop)
 
 jobs:
 
