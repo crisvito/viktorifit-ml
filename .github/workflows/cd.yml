@@ -43,6 +43,8 @@ jobs:
         run: railway up --service viktorifit-ml
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
       - name: Get deployment URL
         id: railway-url
@@ -55,16 +57,22 @@ jobs:
 
       - name: 🩺 Smoke Test — Health Check
         run: |
-          echo "Waiting 20s for deployment to warm up..."
-          sleep 20
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "${{ steps.railway-url.outputs.url }}/")
-          echo "Health check returned HTTP $STATUS"
-          if [ "$STATUS" -ne 200 ]; then
-            echo "❌ Health check FAILED (expected 200, got $STATUS)"
-            exit 1
-          fi
-          echo "✅ Health check PASSED"
+          echo "Waiting for deployment to warm up..."
+          URL="${{ steps.railway-url.outputs.url }}/"
+          
+          # Coba ping URL setiap 10 detik, maksimal 3 menit (18 kali)
+          for i in {1..18}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL" || echo "000")
+            if [ "$STATUS" -eq 200 ]; then
+              echo "✅ Health check PASSED"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $STATUS. Retrying in 10s..."
+            sleep 10
+          done
+          
+          echo "❌ Health check FAILED after 3 minutes"
+          exit 1
 
       - name: 🏷️ Create Release Tag
         if: success()
