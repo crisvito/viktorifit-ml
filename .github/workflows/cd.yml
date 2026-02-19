@@ -1,33 +1,23 @@
 # ============================================================
-# CD — Continuous Deployment
+# CD — Continuous Deployment to Railway
 # ViktoriFit ML Repository
 #
-# On PR → main:   Deploy a Preview URL (for review)
-# On push → main: Deploy to Production + smoke test + auto-tag
+# On push → main: Run CI, then deploy to Railway
 #
-# REQUIRES GitHub Secrets:
-#   VERCEL_TOKEN      → From Vercel dashboard → Account Tokens
-#   VERCEL_ORG_ID     → From `cat .vercel/project.json` after `vercel link`
-#   VERCEL_PROJECT_ID → From `cat .vercel/project.json` after `vercel link`
+# REQUIRES GitHub Secret:
+#   RAILWAY_TOKEN → From Railway dashboard → Account → Tokens
 # ============================================================
 
-name: CD — Deploy to Vercel
+name: CD — Deploy to Railway
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-# Cancel any in-progress deploy for the same branch
-concurrency:
-  group: deploy-${{ github.ref }}
-  cancel-in-progress: true
+    branches: ["main", "master"]  # Deploy on push to main and master branch
 
 jobs:
 
   # ─────────────────────────────────────────────────────────
-  # JOB 1: Re-run CI checks before any deployment
+  # JOB 1: Re-run CI checks before deployment
   # ─────────────────────────────────────────────────────────
   run-ci:
     name: ✅ CI Checks
@@ -35,136 +25,111 @@ jobs:
 
 
   # ─────────────────────────────────────────────────────────
-  # JOB 2: Deploy Preview (triggered by PRs only)
-  # Creates a unique preview URL for every PR
+  # JOB 2: Deploy to Railway Production
   # ─────────────────────────────────────────────────────────
-  deploy-preview:
-    name: 🔍 Deploy Preview
+  deploy-railway:
+    name: 🚀 Deploy to Railway
     runs-on: ubuntu-latest
-    needs: run-ci
-    if: github.event_name == 'pull_request'
+    needs: run-ci  # Only deploy if CI passes
+    permissions:
+        contents: write
 
     steps:
-      - name: Checkout code (with Git LFS)
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
 
-      - name: Pull Vercel project settings
+      - name: Debug Railway environment (safe checks)
         run: |
-          vercel pull --yes \
-            --environment=preview \
-            --token=${{ secrets.VERCEL_TOKEN }}
+          echo "RAILWAY_TOKEN set? $( [ -z "$RAILWAY_TOKEN" ] && echo "no" || echo "yes" )"
+          echo "RAILWAY_PROJECT_ID set? $( [ -z "$RAILWAY_PROJECT_ID" ] && echo "no" || echo "yes" )"
+          echo "RAILWAY_SERVICE_ID set? $( [ -z "$RAILWAY_SERVICE_ID" ] && echo "no" || echo "yes" )"
+          echo "railway whoami (non-sensitive):"
+          railway whoami || true
+          echo "railway status (non-sensitive):"
+          # try JSON first if supported, otherwise fall back to human output
+          railway status --json 2>/dev/null || railway status || true
         env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
-      - name: Build project
+      - name: 🚀 Deploy to Railway Production
         run: |
-          vercel build --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$RAILWAY_PROJECT_ID" ] || [ -z "$RAILWAY_SERVICE_ID" ]; then
+            echo "❌ Missing required Railway secrets."
+            exit 1
+          fi
 
-      - name: Deploy Preview to Vercel
-        id: preview
+          railway up \
+            --service $RAILWAY_SERVICE_ID \
+            --project $RAILWAY_PROJECT_ID \
+            --environment production \
+            --detach
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+
+      - name: ⏳ Wait for Deployment to Finish
         run: |
-          URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
-          echo "url=$URL" >> $GITHUB_OUTPUT
-          echo "✅ Preview URL: $URL"
+          echo "Waiting for Railway deployment to stabilize..."
+          sleep 40
         env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-      - name: Post Preview URL as PR comment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const url = "${{ steps.preview.outputs.url }}";
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: [
-                "## 🚀 ViktoriFit ML API — Preview Deployed!",
-                "",
-                `**Preview URL:** ${url}`,
-                "",
-                "### Available Endpoints",
-                `- \`POST ${url}/api/predict/meal\``,
-                `- \`POST ${url}/api/predict/workout\``,
-                `- \`POST ${url}/api/predict/progress\``,
-                `- \`GET  ${url}/api/health\``,
-                "",
-                "> ⚠️ This preview will be replaced when the PR is merged."
-              ].join("\n")
-            });
+      # - name: Get deployment URL
+      #   id: railway-url
+      #   run: |
+      #     set -e
+      #     echo "Connecting to Project: $RAILWAY_PROJECT_ID"
+      #     echo "Targeting Service: $RAILWAY_SERVICE_ID"
 
+      #     # Kita coba ambil domain langsung menggunakan Service ID. 
+      #     # Perhatikan penggunaan flag --project dan --environment secara eksplisit.
+      #     URL=$(railway domain --service $RAILWAY_SERVICE_ID --project $RAILWAY_PROJECT_ID --environment production --json | jq -r '.[0].domain // empty')
 
-  # ─────────────────────────────────────────────────────────
-  # JOB 3: Deploy Production (triggered by push to main only)
-  # ─────────────────────────────────────────────────────────
-  deploy-production:
-    name: 🚀 Deploy Production
-    runs-on: ubuntu-latest
-    needs: run-ci
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    environment:
-      name: production
-      url:  ${{ steps.deploy.outputs.url }}
+      #     # Jika masih kosong, coba ambil dari status dengan filter yang lebih aman
+      #     if [ -z "$URL" ]; then
+      #       echo "Domain not found via 'railway domain', trying fallback status check..."
+      #       URL=$(railway status --project $RAILWAY_PROJECT_ID --environment production --json | jq -r --arg SID "$RAILWAY_SERVICE_ID" '.services[] | select(.id == $SID) | .domains[0] // empty')
+      #     fi
 
-    steps:
-      - name: Checkout code (with Git LFS)
-        uses: actions/checkout@v4
-        with:
-          lfs: true
+      #     if [ -z "$URL" ]; then
+      #       echo "❌ ERROR: URL tidak ditemukan. Pastikan kamu sudah menekan 'Generate Domain' di tab Networking Railway."
+      #       exit 1
+      #     fi
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      #     echo "url=https://$URL" >> $GITHUB_OUTPUT
+      #     echo "🚀 Deployed to: https://$URL"
+      #   env:
+      #     RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      #     RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+      #     RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
 
-      - name: Pull Vercel project settings
-        run: |
-          vercel pull --yes \
-            --environment=production \
-            --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: Build project for production
-        run: |
-          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-      - name: Deploy to Production
-        id: deploy
-        run: |
-          URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
-          echo "url=$URL" >> $GITHUB_OUTPUT
-          echo "🚀 Production URL: $URL"
-        env:
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: 🩺 Smoke Test — Health Check
         run: |
-          echo "Waiting 15s for deployment to warm up..."
-          sleep 15
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            ${{ steps.deploy.outputs.url }}/api/health)
-          echo "Health check returned HTTP $STATUS"
-          if [ "$STATUS" -ne 200 ]; then
-            echo "❌ Health check FAILED (expected 200, got $STATUS)"
-            exit 1
-          fi
-          echo "✅ Health check PASSED"
+          echo "Waiting for deployment to warm up..."
+          URL="https://viktorifit-ml-production-1a27.up.railway.app"
+          
+          # Coba ping URL setiap 10 detik, maksimal 3 menit (18 kali)
+          for i in {1..18}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL" || echo "000")
+            if [ "$STATUS" -eq 200 ]; then
+              echo "✅ Health check PASSED"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $STATUS. Retrying in 10s..."
+            sleep 10
+          done
+          
+          echo "❌ Health check FAILED after 3 minutes"
+          exit 1
 
-      - name: 🏷️  Create Release Tag
+      - name: 🏷️ Create Release Tag
         if: success()
         uses: actions/github-script@v7
         with:
@@ -179,3 +144,4 @@ jobs:
               sha:   context.sha,
             });
             console.log(`✅ Release tagged: ${tag}`);
+          

@@ -1,7 +1,7 @@
 # ============================================================
 # CI — Continuous Integration
-# Runs on: every push to any branch + every pull request to main/develop
-# Jobs: lint → test → validate-structure
+# Runs on : every push to any branch + every pull request to main/develop
+# Jobs : lint → test → validate-structure
 # ============================================================
 
 name: CI — Lint · Test · Validate
@@ -11,10 +11,11 @@ on:
         branches: ["**"]
     pull_request:
         branches: [main, develop]
+    workflow_call:
 
 jobs:
     # ─────────────────────────────────────────────────────────
-    # JOB 1: Lint (flake8 + black check)
+    # JOB 1 : Lint (flake8 + black check)
     # ─────────────────────────────────────────────────────────
     lint:
         name: 🔍 Lint
