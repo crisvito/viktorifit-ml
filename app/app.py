@@ -89,7 +89,6 @@ class MealRequest(BaseModel):
     Daily_Calories: float 
     Target_Protein_g: float
     Target_Carbs_g: float
-    Target_Fat_g: float
     Frequency: int = 3
 
 class ProgressRequest(BaseModel):
@@ -122,7 +121,6 @@ class ProgressRequest(BaseModel):
     Level: str
     
     Body_Fat_Category: int
-    Body_Fat_Percentage: float
     
     Frequency: int
     Duration: int

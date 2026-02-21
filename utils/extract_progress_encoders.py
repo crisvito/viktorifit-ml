@@ -51,7 +51,7 @@ print(f"Feature order: {features}")
 
 # Save slim artifact
 slim = {
-    "encoders": encoders,   # LabelEncoders for Gender, Goal, Level, BMI_Category_x
+    "encoders": encoders,   # LabelEncoders for Gender, Goal, Level
     "features": features,   # Ordered list of 18 feature names
 }
 

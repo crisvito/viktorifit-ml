@@ -162,11 +162,9 @@ def _predict_single_week(user_input: dict, week: int, current_weight: float) -> 
         user_input["Age"],
         gender_code,
         user_input["Height_cm"],
-        current_weight,                          # dynamic
-        bmi,                                     # dynamic (derived)
-        bmi_cat_code,                            # dynamic (derived)
+        current_weight,
+        bmi_cat_code,
         user_input.get("Body_Fat_Category", 0),
-        user_input["Body_Fat_Percentage"],
         goal_code,
         user_input["Frequency"],
         user_input["Duration"],
