@@ -4,7 +4,9 @@
 [![Railway](https://img.shields.io/badge/Railway-131415?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)
 
-**Viktorifit ML** adalah pusat kecerdasan buatan yang menggerakkan ekosistem kesehatan Viktorifit. Sistem ini menyediakan rekomendasi nutrisi, rencana latihan, dan prediksi perkembangan tubuh yang dipersonalisasi dengan fokus pada **latensi rendah (low-latency)** menggunakan format **ONNX**.
+**Viktorifit ML** adalah pusat kecerdasan buatan yang menggerakkan ekosistem kesehatan Viktorifit. Sistem ini menyediakan rekomendasi nutrisi, rencana latihan, dan prediksi perkembangan tubuh yang dipersonalisasi sesuai pengguna
+
+![Dashboard Preview](img/dashboard.png)
 
 ---
 
