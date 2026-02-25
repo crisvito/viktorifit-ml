@@ -3,9 +3,9 @@ name: Upload models to W&B
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]  # Changed from "master" to "main"
-    paths:
-      - 'models/**'  # Only trigger when models change
+    branches: [ "master" ] 
+    # paths:
+    #   - 'models/**'  
 
 jobs:
   # ─────────────────────────────────────────────────────────
