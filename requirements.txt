@@ -9,3 +9,4 @@ seaborn==0.13.2
 matplotlib==3.9.2
 onnxruntime==1.18.0
 numpy==1.26.4
+wandb==0.25.0
