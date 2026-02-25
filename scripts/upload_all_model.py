@@ -1,104 +1,236 @@
+#!/usr/bin/env python3
+"""
+Upload Models to W&B
+=====================================
+Uploads each model as a SEPARATE artifact for independent versioning.
+
+This replaces upload_all_model.py which incorrectly bundled everything together.
+"""
+
 import os
 import wandb
 from datetime import datetime
+import glob
 
 def get_next_version(entity, project, artifact_name):
-    """
-    Retrieves the next available version number for a Weights & Biases (W&B) artifact.
-
-    This function queries the W&B API to find the latest version of a specified 
-    model artifact and calculates the next incremental integer.
-
-    Args:
-        entity (str): The W&B entity (username or team name).
-        project (str): The target W&B project name.
-        artifact_name (str): The name of the artifact collection to query.
-
-    Returns:
-        int: The next incremental version number. Returns 1 if the artifact
-             does not exist or if an API error occurs.
-    """
+    """Get next version number for an artifact"""
     api = wandb.Api()
     try:
-        # Retrieve the collection of artifacts matching the specified name
-        collection = api.artifact_collection(type_name="model", name=f"{entity}/{project}/{artifact_name}")
+        collection = api.artifact_collection(
+            type_name="model", 
+            name=f"{entity}/{project}/{artifact_name}"
+        )
         versions = collection.artifacts()
         
         if not versions:
             return 1
             
-        # Extract the integer value from the latest version tag (e.g., 'v3' -> 3)
         latest_version = max(int(a.version[1:]) for a in versions)
         return latest_version + 1
         
     except:
-        # Fallback: If the artifact collection doesn't exist yet, initialize as version 1
         return 1
 
-def push_model_artifact_auto(model_name, files, project, entity, metadata=None):
+def push_model_artifact(
+    model_name, 
+    files, 
+    project, 
+    entity, 
+    metadata=None,
+    description=None
+):
     """
-    Automatically versions and uploads machine learning model artifacts to W&B.
-
-    This function initializes a W&B run, creates a model artifact with auto-incrementing
-    versioning and timestamp aliases, and uploads the specified files/directories.
-
+    Upload a single model artifact to W&B
+    
     Args:
-        model_name (str): The base name for the model artifact.
-        files (list): A list of file paths or directory paths to be included in the artifact.
-        project (str): The target W&B project name.
-        entity (str): The W&B entity (username or team name).
-        metadata (dict, optional): Additional metadata dictionary to attach to the artifact. Defaults to None.
+        model_name: Artifact name (e.g., 'viktorifit-meal-model')
+        files: List of file paths to include
+        project: W&B project name
+        entity: W&B entity/username
+        metadata: Dict of metadata to attach
+        description: Human-readable description
     """
     metadata = metadata or {}
 
-    # Initialize a new W&B run specifically for logging the artifact
-    run = wandb.init(project=project, entity=entity, job_type="push-model", reinit=True)
+    # Initialize W&B run
+    run = wandb.init(
+        project=project, 
+        entity=entity, 
+        job_type="upload-model", 
+        reinit=True
+    )
 
-    # Generate an auto-incrementing version alias
+    # Generate version
     next_version = get_next_version(entity, project, model_name)
     version_alias = f"v{next_version}"
-
-    # Generate a UTC timestamp alias for precise tracking
     timestamp_alias = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
 
-    # Append tracking aliases to the artifact's metadata
-    metadata["auto_version"] = version_alias
-    metadata["timestamp"] = timestamp_alias
+    # Add tracking info to metadata
+    metadata.update({
+        "version": version_alias,
+        "timestamp": timestamp_alias,
+        "uploaded_at": datetime.utcnow().isoformat() + "Z"
+    })
 
-    # Initialize the W&B Artifact object
+    # Create artifact
     artifact = wandb.Artifact(
         name=model_name,
         type="model",
+        description=description or f"Model artifact for {model_name}",
         metadata=metadata
     )
 
-    # Iterate through the provided paths and append them to the artifact
-    for f in files:
-        if os.path.isdir(f):
-            artifact.add_dir(f)
+    # Add files
+    files_added = 0
+    for file_path in files:
+        if os.path.isdir(file_path):
+            artifact.add_dir(file_path)
+            files_added += len(glob.glob(f"{file_path}/**/*", recursive=True))
+        elif os.path.exists(file_path):
+            artifact.add_file(file_path)
+            files_added += 1
         else:
-            artifact.add_file(f)
+            print(f"⚠️  File not found: {file_path}")
 
-    # Upload the artifact to W&B with multiple identifiable tags
+    # Log artifact with aliases
     run.log_artifact(
         artifact,
-        aliases=[version_alias, timestamp_alias, "latest"]
+        aliases=[version_alias, timestamp_alias, "latest", "production"]
     )
 
-    # Gracefully terminate the W&B run
     run.finish()
 
-    # Output execution summary to the console
-    print(f"Uploaded {model_name}")
-    print(f"Version: {version_alias}")
-    print(f"Timestamp: {timestamp_alias}")
+    # Print summary
+    print(f"✅ Uploaded: {model_name}")
+    print(f"   Version: {version_alias}")
+    print(f"   Files: {files_added}")
+    print(f"   Timestamp: {timestamp_alias}")
+    print()
+
+def upload_all_models_separately():
+    """
+    Upload each model as a SEPARATE artifact
+    """
+    
+    project = os.environ.get("WANDB_PROJECT")
+    entity = os.environ.get("WANDB_ENTITY")
+    
+    if not project or not entity:
+        raise ValueError("WANDB_PROJECT and WANDB_ENTITY must be set")
+    
+    print("="*70)
+    print("UPLOADING MODELS TO W&B (SEPARATE ARTIFACTS)")
+    print("="*70)
+    print(f"Project: {project}")
+    print(f"Entity: {entity}")
+    print()
+    
+    # ========================================
+    # 1. MEAL PREDICTOR
+    # ========================================
+    print("📦 1/3: Meal Predictor")
+    
+    if os.path.exists("models/model_meal.pickle"):
+        push_model_artifact(
+            model_name="viktorifit-meal-model",
+            files=["models/model_meal.pickle"],
+            project=project,
+            entity=entity,
+            metadata={
+                "model_type": "knn",
+                "algorithm": "NearestNeighbors",
+                "n_neighbors": 3,
+                "features": ["Energy", "Protein", "Carbs"],
+                "purpose": "Food recommendation system"
+            },
+            description="KNN-based meal recommendation model"
+        )
+    else:
+        print("⚠️  models/model_meal.pickle not found, skipping")
+    
+    # ========================================
+    # 2. WORKOUT PREDICTOR
+    # ========================================
+    print("📦 2/3: Workout Predictor")
+    
+    if os.path.exists("models/model_workout.pickle"):
+        push_model_artifact(
+            model_name="viktorifit-workout-model",
+            files=["models/model_workout.pickle"],
+            project=project,
+            entity=entity,
+            metadata={
+                "model_type": "weighted_knn",
+                "algorithm": "NearestNeighbors (Weighted)",
+                "n_neighbors": 1,
+                "features": [
+                    "Goal_Encoded", "level_Encoded", "Workout_Frequency_x",
+                    "environment_Encoded", "Gender_Encoded", "Age_x",
+                    "Initial_Weight_kg_x", "Badminton", "Football",
+                    "Basketball", "Volleyball", "Swim"
+                ],
+                "purpose": "Workout buddy matching"
+            },
+            description="Weighted KNN for workout partner matching"
+        )
+    else:
+        print("⚠️  models/model_workout.pickle not found, skipping")
+    
+    # ========================================
+    # 3. PROGRESS PREDICTOR (ONNX)
+    # ========================================
+    print("📦 3/3: Progress Predictor (ONNX)")
+    
+    onnx_dir = "models/onnx"
+    
+    if os.path.exists(onnx_dir):
+        # Get all ONNX files
+        onnx_files = glob.glob(f"{onnx_dir}/*.onnx")
+        
+        if onnx_files:
+            push_model_artifact(
+                model_name="viktorifit-progress-model",
+                files=onnx_files,
+                project=project,
+                entity=entity,
+                metadata={
+                    "model_type": "xgboost_ensemble_onnx",
+                    "algorithm": "XGBoost Regressor (ONNX)",
+                    "n_models": len(onnx_files),
+                    "targets": [
+                        os.path.basename(f).replace('.onnx', '') 
+                        for f in onnx_files
+                    ],
+                    "features": [
+                        "Age", "Gender_Encoded", "Height_cm", "Initial_Weight_kg",
+                        "BMI_Category_x_Encoded", "Body_Fat_Category",
+                        "Goal_Encoded", "Workout_Frequency", "Average_Duration_Minutes",
+                        "level_Encoded", "Badminton", "Football", "Basketball",
+                        "Volleyball", "Swim", "Week"
+                    ],
+                    "purpose": "User progress prediction"
+                },
+                description=f"XGBoost ensemble ({len(onnx_files)} ONNX models) for progress tracking"
+            )
+        else:
+            print(f"⚠️  No ONNX files found in {onnx_dir}")
+    else:
+        print(f"⚠️  {onnx_dir} not found, skipping")
+    
+    # ========================================
+    # SUMMARY
+    # ========================================
+    print("="*70)
+    print("✅ UPLOAD COMPLETE")
+    print("="*70)
+    print()
+    print("View artifacts at:")
+    print(f"https://wandb.ai/{entity}/{project}/artifacts")
+    print()
+    print("You should now see 3 separate artifacts:")
+    print("  • viktorifit-meal-model")
+    print("  • viktorifit-workout-model")
+    print("  • viktorifit-progress-model")
 
 if __name__ == "__main__":
-    # Execute the artifact push for the Viktorifit project
-    push_model_artifact_auto(
-        model_name="viktorifit-model",
-        files=["models"], 
-        project=os.environ.get("WANDB_PROJECT"),
-        entity=os.environ.get("WANDB_ENTITY"),
-        metadata={"framework": "sklearn"}
-    )
+    upload_all_models_separately()
