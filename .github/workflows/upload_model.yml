@@ -61,7 +61,7 @@ jobs:
           WANDB_PROJECT: viktorifit-ml
           WANDB_ENTITY: vincentfernandes1708-binus-university   
         run: |
-          python scripts/upload_all_models_FIXED.py
+          python scripts/upload_all_model.py
       
       - name: Summary
         run: |
