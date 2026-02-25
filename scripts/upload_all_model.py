@@ -53,3 +53,12 @@ def push_model_artifact_auto(model_name, files, project, entity, metadata=None):
     print(f"Uploaded {model_name}")
     print(f"Version: {version_alias}")
     print(f"Timestamp: {timestamp_alias}")
+
+if __name__ == "__main__":
+    push_model_artifact_auto(
+        model_name="viktorifit-model",
+        files=["models"], 
+        project=os.environ.get("WANDB_PROJECT"),
+        entity=os.environ.get("WANDB_ENTITY"),
+        metadata={"framework": "sklearn"}
+    )

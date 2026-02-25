@@ -20,8 +20,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Debug models folder
+        run: |
+          echo "Listing root folder:"
+          ls -la
+          echo "Listing models folder:"
+          ls -la models || echo "models folder not found"
+
+      - name: Login to W&B
+        run: wandb login ${{ secrets.WANDB_API_KEY }}
+
       - name: Upload models
         env:
           WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
           WANDB_PROJECT: viktorifit-ml
+          WANDB_ENTITY: vincentfernandes1708-binus-university   
         run: python scripts/upload_all_model.py
