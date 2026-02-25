@@ -24,4 +24,4 @@ jobs:
         env:
           WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
           WANDB_PROJECT: viktorifit-ml
-        run: python scripts/upload_all_models.py
+        run: python scripts/upload_all_model.py
