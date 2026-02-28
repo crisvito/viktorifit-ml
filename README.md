@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # 🏋️ Viktorifit Machine Learning
 
 A personalized health recommendation system powered by Machine Learning — providing smart suggestions for meals, workout plans, and body progress predictions with low-latency ONNX-optimized models.
-
-![Viktorifit ML](./media/demo.png)
 
 ## ✨ Features
 
@@ -284,13 +281,9 @@ viktorifit-ml/
 ---
 
 **Made with ❤️ by Viktorifit Team**
-<<<<<<< HEAD
 
 _Empowering your fitness journey with intelligent, data-driven insights._ 🏋️✨
 =======
 *Transforming health data into personalized fitness journeys!* 🍎💪✨
 
 ```
-
----
->>>>>>> e3a76f2b26b938438580affe0212daddf2617c0c
