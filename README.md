@@ -30,7 +30,7 @@ A personalized health recommendation system powered by Machine Learning — prov
 
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://viktorifit.vercel.app)
 [![Railway](https://img.shields.io/badge/Railway-131415?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app)
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)
+![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
 
 **Viktorifit ML** adalah pusat kecerdasan buatan yang menggerakkan ekosistem kesehatan Viktorifit. Sistem ini menyediakan rekomendasi nutrisi, rencana latihan, dan prediksi perkembangan tubuh yang dipersonalisasi sesuai pengguna
 
